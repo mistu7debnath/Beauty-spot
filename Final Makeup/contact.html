@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BeautySpot — Contact</title>
+  <!-- font awesome cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
+
+  <!-- custom css file link  -->
+  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="loading-animations.css">
+  <link rel="stylesheet" href="floating-include.css">
+
+  <!-- Internal CSS: easy variables to change the nav colour -->
+  <style>
+    :root {
+      /* change these to update the nav colour / contrast */
+      /* Default set to a pink gradient for the whole navigation bar */
+      --nav-bg-start: rgba(197, 4, 245, 0.388);
+      /* pink gradient start (darker) */
+      --nav-bg-end: rgba(198, 0, 30, 0.656);
+      /* pink gradient end (lighter) */
+      --nav-border: rgba(255, 20, 145, 0.66);
+      /* subtle pink border */
+      --nav-text: #f81010;
+      /* normal link color */
+      --nav-text-hover: #e90e7b;
+      /* hover / active color (lighter white) */
+      --nav-accent: #ff4d88;
+      /* accent color you can use elsewhere */
+    }
+
+    /* Glass nav wrapper */
+    .glassmorphism-nav {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      padding: 10px 18px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, var(--nav-bg-start), var(--nav-bg-end));
+      border: 1px solid var(--nav-border);
+      backdrop-filter: blur(8px) saturate(120%);
+      -webkit-backdrop-filter: blur(8px) saturate(120%);
+    }
+
+    /* Plain inline nav (no surrounding box) */
+    .nav-inline {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      padding: 0;
+      /* no box padding */
+      background: transparent;
+      border: none;
+      border-radius: 0;
+    }
+
+    .nav-inline .nav-item {
+      color: var(--nav-text);
+      text-decoration: none;
+      padding: 6px 8px;
+      border-radius: 6px;
+      transition: color .18s ease, background-color .18s ease;
+      font-weight: 600;
+      background: transparent;
+    }
+
+    .nav-inline .nav-item:hover,
+    .nav-inline .nav-item:focus {
+      color: var(--nav-text-hover);
+      background: rgba(255, 255, 255, 0.03);
+      transform: none;
+      /* don't lift */
+    }
+
+    /* Nav links for glassmorphism */
+    .glassmorphism-nav .nav-item {
+      color: var(--nav-text);
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 18px;
+      transition: color .18s ease, background-color .18s ease, transform .12s ease;
+      font-weight: 600;
+    }
+
+    .glassmorphism-nav .nav-item:hover,
+    .glassmorphism-nav .nav-item:focus {
+      color: var(--nav-text-hover);
+      background: rgba(255, 255, 255, 0.04);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <!-- Mobile menu button -->
+    <div class="mobile-menu-btn" id="mobile-menu-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <a href="index.html" class="logo">
+      <div class="beauty-icon">
+        <svg viewbox="0 0 120 120" class="beauty-svg">
+          <defs>
+            <lineargradient id="beautyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#ff4d88;stop-opacity:1" />
+              <stop offset="30%" style="stop-color:#b76e79;stop-opacity:1" />
+              <stop offset="70%" style="stop-color:#ff69b4;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#fce4ec;stop-opacity:1" />
+            </lineargradient>
+            <radialgradient id="gemGradient" cx="50%" cy="30%" r="50%">
+              <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
+              <stop offset="60%" style="stop-color:#ff4d88;stop-opacity:0.6" />
+              <stop offset="100%" style="stop-color:#b76e79;stop-opacity:1" />
+            </radialgradient>
+          </defs>
+          <!-- Lipstick case -->
+          <rect x="45" y="70" width="30" height="35" rx="8" fill="url(#beautyGradient)" />
+          <!-- Lipstick bullet -->
+          <rect x="48" y="55" width="24" height="20" rx="12" fill="url(#gemGradient)" />
+          <!-- Elegant diamond shape -->
+          <polygon points="60,25 70,35 60,45 50,35" fill="url(#gemGradient)" stroke="#ff4d88" stroke-width="2" />
+          <!-- Decorative sparkles -->
+          <circle cx="35" cy="30" r="3" fill="#fce4ec" opacity="0.8" />
+          <circle cx="85" cy="40" r="2" fill="#ff4d88" opacity="0.9" />
+          <circle cx="25" cy="60" r="2.5" fill="#b76e79" opacity="0.7" />
+          <circle cx="95" cy="70" r="2" fill="#fce4ec" opacity="0.8" />
+        </svg>
+      </div>
+      <span class="brand-title">BeautySpot</span>
+    </a>
+
+    <div class="nav-container">
+      <form action="" class="search-form">
+        <input type="search" name="" placeholder="search here..." id="search-box">
+        <label for="search-box" class="fas fa-search search-icon"></label>
+      </form>
+
+      <nav class="nav-inline" id="main-nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-item" aria-label="Home">Home</a>
+        <a href="about.html" class="nav-item" aria-label="About">About</a>
+        <a href="products.html" class="nav-item" aria-label="Shop">Shop</a>
+        <a href="gallery.html" class="nav-item" aria-label="Gallery">Gallery</a>
+        <a href="blogs.html" class="nav-item" aria-label="Blog">Tutorial</a>
+        <a href="reviews.html" class="nav-item" aria-label="Reviews">Reviews</a>
+        <a href="contact.html" class="nav-item active" aria-label="Contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="padding-top:8rem;">
+    <section class="contact" aria-label="Contact us" style="padding:6rem 9%;">
+      <div class="section-header">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-description">Reach out for collaborations, questions, or support.</p>
+      </div>
+
+      <div class="contact-grid" style="max-width:900px;margin:0 auto;">
+        <div style="background:var(--glass-bg);padding:2rem;border-radius:1rem;border:1px solid var(--border);">
+          <h3>Get in touch</h3>
+          <p>Email: <a href="mailto:hello@beautyspot.com">dbose@gmail.com,manishadeb@gmail.com</a></p>
+          <p>Phone: 033 24455332</p>
+          <p>Address: Barasat, Kolkata-700126</p>
+          <form class="contact-form" style="margin-top:1rem;">
+            <input type="text" placeholder="Your name" required
+              style="width:100%;padding:1rem;margin-bottom:1rem;border-radius:.6rem;">
+            <input type="email" placeholder="Your email" required
+              style="width:100%;padding:1rem;margin-bottom:1rem;border-radius:.6rem;">
+            <textarea placeholder="Message" required
+              style="width:100%;padding:1rem;margin-bottom:1rem;border-radius:.6rem;min-height:120px;"></textarea>
+            <button class="btn btn-primary" type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="padding:4rem; text-align:center;">
+    <p><a href="index.html">Back to Home</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

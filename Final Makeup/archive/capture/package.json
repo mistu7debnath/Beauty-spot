@@ -1,0 +1,13 @@
+{
+  "name": "makeup-preview-capture-archived",
+  "version": "1.0.0",
+  "description": "Archived capture utility (Puppeteer)",
+  "main": "capture.js",
+  "scripts": {
+    "capture": "node capture.js"
+  },
+  "dependencies": {
+    "puppeteer": "^21.4.0"
+  },
+  "license": "MIT"
+}

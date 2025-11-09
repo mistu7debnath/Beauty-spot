@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>BeautySpot — Tutorials</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="loading-animations.css">
+    <link rel="stylesheet" href="floating-include.css">
+
+    <style>
+        :root {
+            --nav-bg-start: rgba(197, 4, 245, 0.388);
+            --nav-bg-end: rgba(198, 0, 30, 0.656);
+            --nav-border: rgba(255, 20, 145, 0.66);
+            --nav-text: #f81010;
+            --nav-text-hover: #e90e7b;
+            --nav-accent: #ff4d88;
+        }
+
+        .nav-inline {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .nav-inline .nav-item {
+            color: var(--nav-text);
+            text-decoration: none;
+            padding: 6px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .nav-inline .nav-item.active {
+            color: var(--nav-accent);
+            border-bottom: 2px solid var(--nav-accent);
+        }
+
+        /* Tutorials Grid */
+        .tutorial-section {
+            padding: 8rem 3rem;
+        }
+
+        .tutorial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1300px;
+            margin: auto;
+        }
+
+        .tutorial-grid>div:nth-child(4) {
+            grid-column: 2 / 3;
+        }
+
+        /* ======== Pink Diamond Shine Effect ======== */
+        .video-box {
+            background: #000;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            padding-bottom: 178%;
+            cursor: pointer;
+        }
+
+        .video-box::after {
+            content: "";
+            position: absolute;
+            top: -100%;
+            left: -150%;
+            width: 200%;
+            height: 300%;
+            background: linear-gradient(120deg,
+                    rgba(255, 182, 193, 0.0) 0%,
+                    rgba(255, 182, 193, 0.25) 40%,
+                    rgba(255, 255, 255, 0.55) 50%,
+                    rgba(255, 105, 180, 0.35) 60%,
+                    rgba(255, 182, 193, 0.0) 100%);
+            transform: rotate(25deg);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-box:hover::after {
+            opacity: 1;
+            animation: pinkDiamondShine 1.2s ease forwards;
+        }
+
+        @keyframes pinkDiamondShine {
+            0% {
+                top: -120%;
+                left: -180%;
+            }
+
+            100% {
+                top: 120%;
+                left: 180%;
+            }
+        }
+
+        .video-box iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .tutorial-text {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .tutorial-text h3 {
+            color: #d81b60;
+            margin-bottom: .4rem;
+        }
+
+        .tutorial-text p {
+            font-size: 1.4rem;
+            color: #444;
+        }
+
+        @media (max-width: 1024px) {
+            .tutorial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tutorial-grid>div:nth-child(4) {
+                grid-column: 1 / 3;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .tutorial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tutorial-grid>div:nth-child(4) {
+                grid-column: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo">
+            <span class="brand-title">BeautySpot</span>
+        </a>
+
+        <nav class="nav-inline">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="about.html" class="nav-item">About</a>
+            <a href="products.html" class="nav-item">Shop</a>
+            <a href="gallery.html" class="nav-item">Gallery</a>
+            <a href="blogs.html" class="nav-item active">Tutorial</a>
+            <a href="reviews.html" class="nav-item">Reviews</a>
+            <a href="contact.html" class="nav-item">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="tutorial-section">
+
+            <div
+                style="max-width:900px; margin:0 auto 4rem; text-align:center;
+             padding:3rem 2rem; background:linear-gradient(135deg,#fff 0%,#fce4ec 50%,#fff 100%);
+             border-radius:20px; box-shadow:0 10px 30px rgba(232,67,147,0.15); border:2px solid rgba(255,182,193,0.4);">
+                <h2 style="font-size:3rem; color:#D81B60; font-weight:700;">Welcome to Our Tutorials</h2>
+                <p style="font-size:3.2rem; color:#dc3e3e; font-weight:700;">Explore the latest beauty tips, tricks &
+                    makeup hacks!</p>
+            </div>
+
+            <div class="tutorial-grid">
+
+                <!-- Tutorial 1 -->
+                <div>
+                    <div class="video-box">
+                        <iframe src="https://www.youtube.com/embed/VWQWI333vqI?rel=0&modestbranding=1" loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="tutorial-text">
+                        <h3>Makeup Tutorial #1</h3>
+                        <p>Step-by-step guide for a flawless base.</p>
+                    </div>
+                </div>
+
+                <!-- Tutorial 2 -->
+                <div>
+                    <div class="video-box">
+                        <iframe src="https://www.youtube.com/embed/MOMYfAr3WmE?rel=0&modestbranding=1" loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="tutorial-text">
+                        <h3>Makeup Tutorial #2</h3>
+                        <p>Professional contouring & blending tricks.</p>
+                    </div>
+                </div>
+
+                <!-- Tutorial 3 -->
+                <div>
+                    <div class="video-box">
+                        <iframe src="https://www.youtube.com/embed/S9sRr7ocG-0?rel=0&modestbranding=1" loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="tutorial-text">
+                        <h3>Makeup Tutorial #3</h3>
+                        <p>Achieve the perfect everyday glam.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+
+    <footer style="padding:4rem; text-align:center;">
+        <p><a href="index.html">Back to Home</a></p>
+    </footer>
+
+</body>
+
+</html>

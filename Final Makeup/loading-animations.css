@@ -1,0 +1,2309 @@
+/* Product-Specific Loading Animations - Vertical Swipe Application Style */
+
+/* Foundation Animation - Dramatic Vertical Swipe */
+.foundation-animation {
+  width: 180px !important;
+  height: 280px !important;
+  position: relative;
+  margin: 0 auto;
+  overflow: visible;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+  border-radius: 20px;
+}
+
+/* Dull Uneven Face (Before) */
+.foundation-animation > .face {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 260px;
+  background: linear-gradient(180deg, 
+    rgba(220, 190, 160, 0.4) 0%, 
+    rgba(210, 180, 150, 0.5) 30%,
+    rgba(200, 170, 140, 0.45) 60%,
+    rgba(210, 180, 150, 0.4) 100%);
+  border-radius: 80px 80px 60px 60px;
+  border: 2px solid rgba(232, 67, 147, 0.2);
+  box-shadow: inset 0 10px 30px rgba(100, 70, 50, 0.1);
+}
+
+/* Flawless Foundation Coverage (After) - Vertical Swipe Down */
+.foundation-animation > .coverage {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 260px;
+  background: linear-gradient(180deg, 
+    rgba(255, 235, 215, 0.95) 0%, 
+    rgba(250, 225, 205, 0.98) 50%,
+    rgba(245, 220, 200, 0.95) 100%);
+  border-radius: 80px 80px 60px 60px;
+  clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+  animation: verticalSwipeDown 2.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  box-shadow: 
+    inset 0 5px 20px rgba(255, 255, 255, 0.5),
+    0 10px 40px rgba(232, 67, 147, 0.3);
+  filter: brightness(1.1);
+}
+
+/* Hand with Sponge - Vertical Motion */
+.foundation-animation > .sponge {
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%) rotate(0deg);
+  width: 60px;
+  height: 65px;
+  background: radial-gradient(ellipse at 35% 35%, #ffb6c1 0%, #ff69b4 60%, #ff1493 100%);
+  border-radius: 45% 45% 50% 50%;
+  animation: handVerticalSwipe 2.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  box-shadow: 0 15px 40px rgba(255, 20, 147, 0.7);
+  z-index: 10;
+}
+
+.foundation-animation > .sponge::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  width: 30px;
+  height: 35px;
+  background: radial-gradient(ellipse, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.foundation-animation > .sparkle {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  animation: sparklePopIn 2.5s ease-in-out infinite;
+  animation-delay: 1.2s;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8));
+}
+
+/* Concealer Animation - Vertical Under Eye Coverage */
+.concealer-animation {
+  width: 180px !important;
+  height: 280px !important;
+  position: relative;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+/* Eye Area Base */
+.concealer-animation > .eye-area {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 155px;
+  height: 75px;
+  border: 2px solid rgba(232, 67, 147, 0.25);
+  border-radius: 62% 62% 38% 38%;
+  background: rgba(245, 230, 220, 0.15);
+  box-shadow: inset 0 3px 12px rgba(160, 140, 120, 0.1);
+}
+
+/* Dark Circles (Before) */
+.concealer-animation > .dark-circle {
+  position: absolute;
+  top: 142px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 35px;
+  background: radial-gradient(ellipse, rgba(110, 80, 100, 0.4) 0%, rgba(130, 100, 120, 0.25) 50%, transparent 80%);
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(110, 80, 100, 0.2);
+}
+
+/* Brightened Under Eye (After) - Vertical Reveal */
+.concealer-animation > .coverage {
+  position: absolute;
+  top: 142px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 35px;
+  background: radial-gradient(ellipse, 
+    rgba(255, 240, 230, 0.95) 0%, 
+    rgba(255, 235, 220, 0.85) 50%, 
+    rgba(255, 230, 215, 0.7) 80%);
+  border-radius: 50%;
+  clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+  animation: concealerVerticalCover 2.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  box-shadow: 
+    0 3px 15px rgba(255, 240, 230, 0.5),
+    inset 0 1px 8px rgba(255, 255, 255, 0.4);
+}
+
+/* Concealer Wand - Vertical Dabs */
+.concealer-animation > .wand {
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85px;
+  height: 10px;
+  background: linear-gradient(90deg, #e84393 0%, #ffcdaf 45%, #ffe4d6 100%);
+  border-radius: 5px;
+  animation: concealerWandVertical 2.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  box-shadow: 0 6px 20px rgba(255, 205, 175, 0.5);
+  z-index: 10;
+}
+
+.concealer-animation > .wand::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 16px;
+  background: radial-gradient(ellipse at center, rgba(255, 228, 214, 0.8) 0%, rgba(255, 205, 175, 0.5) 50%, transparent 80%);
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+.concealer-animation > .wand::after {
+  content: '✨';
+  position: absolute;
+  right: -25px;
+  top: -10px;
+  font-size: 1.5rem;
+  animation: sparkleFloat 1s ease-in-out infinite;
+}
+
+/* Blush Animation - Vertical Cheek Swipe */
+.blush-animation {
+  width: 180px !important;
+  height: 280px !important;
+  position: relative;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+/* Pale Face */
+.blush-animation > .face {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 220px;
+  background: linear-gradient(180deg,
+    rgba(240, 220, 200, 0.3) 0%,
+    rgba(245, 225, 205, 0.35) 50%,
+    rgba(240, 220, 200, 0.3) 100%);
+  border: 2px solid rgba(232, 67, 147, 0.25);
+  border-radius: 50% 50% 45% 45%;
+  box-shadow: inset 0 3px 15px rgba(160, 140, 120, 0.12);
+}
+
+/* Rosy Cheeks - Vertical Reveal */
+.blush-animation > .cheeks {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 220px;
+  border-radius: 50% 50% 45% 45%;
+  background: 
+    radial-gradient(ellipse 45px 45px at 28% 48%, rgba(255, 140, 160, 0.75) 0%, rgba(255, 160, 180, 0.4) 50%, transparent 80%),
+    radial-gradient(ellipse 45px 45px at 72% 48%, rgba(255, 140, 160, 0.75) 0%, rgba(255, 160, 180, 0.4) 50%, transparent 80%),
+    linear-gradient(180deg,
+      rgba(255, 235, 240, 0.3) 0%,
+      rgba(255, 245, 248, 0.4) 50%,
+      rgba(255, 240, 245, 0.3) 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+  animation: blushVerticalReveal 2.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  box-shadow: 
+    0 5px 25px rgba(255, 140, 160, 0.4),
+    inset 0 2px 15px rgba(255, 200, 210, 0.3);
+}
+
+/* Blush Brush - Vertical Motion */
+.blush-animation > .brush {
+  position: absolute;
+  top: -65px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-8deg);
+  width: 65px;
+  height: 16px;
+  background: linear-gradient(90deg, #8b4513 0%, #c49a6c 35%, #ffb6c1 100%);
+  border-radius: 30px 6px 6px 30px;
+  animation: blushBrushVertical 2.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  box-shadow: 0 8px 25px rgba(255, 182, 193, 0.5);
+  z-index: 10;
+}
+
+.blush-animation > .brush::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -4px;
+  width: 22px;
+  height: 24px;
+  background: radial-gradient(ellipse at center, rgba(255, 182, 193, 0.6) 0%, rgba(255, 200, 210, 0.4) 40%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(3px);
+}
+
+.blush-animation > .heart {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  animation: heartBeat 1.5s ease-in-out infinite;
+  filter: drop-shadow(0 4px 12px rgba(255, 105, 180, 0.5));
+}
+
+/* Eyeshadow Animation - Vertical Color Sweep */
+.eyeshadow-animation {
+  width: 180px !important;
+  height: 280px !important;
+  position: relative;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+/* Bare Eye */
+.eyeshadow-animation > .eye {
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 75px;
+  border: 2px solid rgba(232, 67, 147, 0.25);
+  border-radius: 63% 63% 37% 37%;
+  background: radial-gradient(ellipse at center, rgba(250, 240, 235, 0.2) 0%, rgba(245, 235, 230, 0.15) 100%);
+  box-shadow: inset 0 2px 10px rgba(170, 150, 140, 0.1);
+}
+
+/* Colorful Eyeshadow - Vertical Reveal */
+.eyeshadow-animation > .shadow {
+  position: absolute;
+  top: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 50px;
+  border-radius: 63% 63% 0 0;
+  background: linear-gradient(180deg, 
+    rgba(186, 85, 211, 0.85) 0%,
+    rgba(232, 67, 147, 0.75) 35%,
+    rgba(255, 20, 147, 0.65) 70%,
+    rgba(255, 105, 180, 0.4) 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+  animation: shadowVerticalSweep 2.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  box-shadow: 
+    0 5px 25px rgba(232, 67, 147, 0.5),
+    inset 0 2px 12px rgba(255, 255, 255, 0.3);
+}
+
+/* Eyeshadow Brush - Vertical Motion */
+.eyeshadow-animation > .brush {
+  position: absolute;
+  top: -65px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-10deg);
+  width: 75px;
+  height: 14px;
+  background: linear-gradient(90deg, #8b4513 0%, #c49a6c 35%, #e84393 100%);
+  border-radius: 25px 5px 5px 25px;
+  animation: shadowBrushVertical 2.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  box-shadow: 0 8px 25px rgba(232, 67, 147, 0.5);
+  z-index: 10;
+}
+
+.eyeshadow-animation > .brush::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -3px;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(ellipse at center, rgba(232, 67, 147, 0.6) 0%, rgba(255, 105, 180, 0.4) 45%, transparent 75%);
+  border-radius: 50%;
+  filter: blur(3px);
+}
+
+.eyeshadow-animation > .sparkles {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  animation: sparkleFloat 2s ease-in-out infinite;
+  filter: drop-shadow(0 4px 12px rgba(232, 67, 147, 0.5));
+}
+
+/* Mascara Animation - Vertical Lash Swipe */
+.mascara-animation {
+  width: 180px !important;
+  height: 280px !important;
+  position: relative;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+/* Eye Base */
+.mascara-animation > .eye {
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 75px;
+  border: 2px solid rgba(232, 67, 147, 0.3);
+  border-radius: 65% 65% 38% 38%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.15) 0%, rgba(232, 67, 147, 0.08) 100%);
+  box-shadow: inset 0 3px 12px rgba(150, 150, 150, 0.1);
+}
+
+/* Short Sparse Lashes (Before) */
+.mascara-animation > .lash1,
+.mascara-animation > .lash2,
+.mascara-animation > .lash3,
+.mascara-animation > .lash4,
+.mascara-animation > .lash5 {
+  position: absolute;
+  top: 88px;
+  width: 2.5px;
+  height: 18px;
+  background: linear-gradient(180deg, rgba(80, 80, 80, 0.5) 0%, rgba(100, 100, 100, 0.3) 100%);
+  transform-origin: bottom center;
+  border-radius: 2px 2px 0 0;
+}
+
+.mascara-animation > .lash1 {
+  left: 50px;
+  transform: rotate(-22deg);
+}
+
+.mascara-animation > .lash2 {
+  left: 72px;
+  height: 20px;
+  transform: rotate(-11deg);
+}
+
+.mascara-animation > .lash3 {
+  left: 90px;
+  height: 22px;
+  transform: rotate(0deg);
+}
+
+.mascara-animation > .lash4 {
+  left: 108px;
+  height: 20px;
+  transform: rotate(11deg);
+}
+
+.mascara-animation > .lash5 {
+  left: 130px;
+  transform: rotate(22deg);
+}
+
+/* Long Voluminous Lashes (After) - Vertical Reveal */
+.mascara-animation > .lashes {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 100px;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  animation: lashVerticalGrow 2.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  z-index: 2;
+}
+
+.mascara-animation > .lashes::before,
+.mascara-animation > .lashes::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 3.5px;
+  background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.95) 60%, rgba(0, 0, 0, 0.85) 100%);
+  border-radius: 2px 2px 0 0;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.4),
+    inset 0 1px 3px rgba(255, 255, 255, 0.2);
+}
+
+.mascara-animation > .lashes::before {
+  left: 45px;
+  height: 38px;
+  transform: rotate(-20deg);
+  box-shadow: 
+    15px 0 0 #000,
+    30px 2px 0 #000,
+    45px 0 0 #000,
+    0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.mascara-animation > .lashes::after {
+  right: 45px;
+  height: 38px;
+  transform: rotate(20deg);
+  box-shadow: 
+    -15px 0 0 #000,
+    -30px 2px 0 #000,
+    -45px 0 0 #000,
+    0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Mascara Wand - Vertical Motion */
+.mascara-animation > .wand {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-5deg);
+  width: 90px;
+  height: 14px;
+  background: linear-gradient(90deg, #e84393 0%, #3a3a3a 55%, #1a1a1a 100%);
+  border-radius: 7px;
+  animation: mascaraVerticalSwipe 2.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+.mascara-animation > .wand::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 18px;
+  background: repeating-linear-gradient(
+    90deg,
+    #000 0px,
+    #000 2.5px,
+    transparent 2.5px,
+    transparent 4.5px
+  );
+  border-radius: 4px;
+}
+
+.mascara-animation > .eye-emoji {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3.5rem;
+  animation: eyeTransform 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Eyeliner Animation - Drawing Wing */
+.eyeliner-animation {
+  width: 180px !important;
+  height: 100px !important;
+  position: relative;
+  margin: 80px auto;
+  animation: eyeBlink 3s ease-in-out infinite;
+}
+
+/* Eye Shape */
+.eyeliner-animation > .eye-base {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 60px;
+  background: radial-gradient(circle at center, rgba(232, 67, 147, 0.1), transparent);
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: eyeOutline 3s ease-in-out infinite;
+}
+
+/* Eyeliner Line Being Drawn */
+.eyeliner-animation > .liner {
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #000 0%, #1a1a1a 50%, #000 100%);
+  border-radius: 2px 2px 0 0;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(232, 67, 147, 0.3);
+  animation: drawWingedLiner 3s ease-in-out infinite;
+  transform-origin: left center;
+}
+
+/* Eyeliner Pen */
+.eyeliner-animation > .pen {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100px;
+  height: 8px;
+  background: linear-gradient(90deg, #e84393 0%, #c0392b 70%, #2c3e50 100%);
+  border-radius: 4px;
+  box-shadow: 0 3px 10px rgba(232, 67, 147, 0.4);
+  animation: penDraw 3s ease-in-out infinite;
+  z-index: 2;
+}
+
+.eyeliner-animation > .pen::before {
+  content: '';
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid #2c3e50;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+.eyeliner-animation > .pen::after {
+  content: '✨';
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  animation: sparkleTrail 1s ease-in-out infinite;
+}
+
+/* Wing Flick */
+.eyeliner-animation > .wing {
+  position: absolute;
+  top: 28px;
+  right: 15px;
+  width: 0;
+  height: 0;
+  border-left: 0px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 25px solid #000;
+  transform: rotate(-25deg);
+  opacity: 0;
+  animation: wingFlick 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(232, 67, 147, 0.5));
+}
+
+/* Sparkle Effects */
+.eyeliner-animation > .sparkles {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  animation: sparklesBurst 3s ease-in-out infinite;
+}
+
+/* Lipstick Animation - Horizontal Swipe Application */
+.lipstick-animation {
+  width: 180px !important;
+  height: 250px !important;
+  position: relative;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+/* Bare Lips */
+.lipstick-animation > .lips {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 55px;
+  border: 2px solid rgba(232, 67, 147, 0.3);
+  border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+  background: linear-gradient(180deg, 
+    rgba(255, 200, 200, 0.4) 0%, 
+    rgba(255, 180, 190, 0.5) 50%,
+    rgba(255, 170, 185, 0.4) 100%);
+  box-shadow: inset 0 2px 10px rgba(200, 150, 150, 0.2);
+}
+
+/* Lipstick Color - Horizontal Reveal */
+.lipstick-animation > .color {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 55px;
+  background: linear-gradient(90deg, 
+    rgba(220, 20, 60, 0.98) 0%, 
+    rgba(255, 20, 71, 1) 40%,
+    rgba(199, 21, 133, 0.98) 70%,
+    rgba(220, 20, 100, 1) 100%);
+  border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+  clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+  animation: lipHorizontalSwipe 2.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  box-shadow: 
+    inset 0 3px 15px rgba(255, 255, 255, 0.4),
+    0 5px 25px rgba(255, 20, 71, 0.6);
+}
+
+/* Lipstick Bullet - Horizontal Motion */
+.lipstick-animation > .bullet {
+  position: absolute;
+  top: 100px;
+  left: -50px;
+  width: 40px;
+  height: 75px;
+  background: linear-gradient(180deg, 
+    #ff1447 0%, 
+    #e91453 25%,
+    #dc143c 50%,
+    #c71585 75%,
+    #a01370 100%);
+  border-radius: 18px 18px 7px 7px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
+  animation: lipstickHorizontalGlide 2.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  box-shadow: 0 10px 35px rgba(255, 20, 71, 0.8);
+  transform: rotate(-15deg);
+  z-index: 10;
+}
+
+.lipstick-animation > .bullet::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  width: 20px;
+  height: 35px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, transparent 100%);
+  border-radius: 12px 12px 4px 4px;
+}
+
+.lipstick-animation > .kiss {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4rem;
+  animation: kissPopIn 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 5px 15px rgba(255, 20, 71, 0.7));
+}
+
+/* Lip Gloss Animation - Glossy Application */
+.lipgloss-animation {
+  width: 180px !important;
+  height: 280px !important;
+  position: relative;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+/* Lips (before) */
+.lipgloss-animation > .lips {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 55px;
+  border: 2px solid rgba(232, 67, 147, 0.25);
+  border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+  background: linear-gradient(180deg, rgba(255,200,200,0.35), rgba(255,180,190,0.25));
+  box-shadow: inset 0 2px 10px rgba(200,150,150,0.15);
+}
+
+/* Gloss Coverage - vertical reveal that fills the lips */
+.lipgloss-animation > .gloss {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 55px;
+  border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+  background: linear-gradient(90deg, rgba(255,240,245,0.9), rgba(255,220,230,0.95));
+  clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+  animation: glossVerticalFill 2.5s cubic-bezier(0.65,0,0.35,1) infinite;
+  box-shadow: inset 0 3px 15px rgba(255,255,255,0.6), 0 6px 20px rgba(255,130,180,0.25);
+}
+
+/* Gloss Applicator - vertical swipe down */
+.lipgloss-animation > .applicator {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%) rotate(0deg);
+  width: 80px;
+  height: 12px;
+  background: linear-gradient(90deg, #e84393 0%, #ffdfee 60%);
+  border-radius: 8px;
+  animation: glossApplicatorVertical 2.5s cubic-bezier(0.65,0,0.35,1) infinite;
+  box-shadow: 0 8px 25px rgba(232,67,147,0.4);
+  z-index: 10;
+}
+
+.lipgloss-animation > .sparkle {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  animation: sparklePopIn 2.5s ease-in-out infinite;
+}
+
+/* Setting Spray Animation - Misting Effect */
+.settingspray-animation {
+  width: 180px !important;
+  height: 280px !important;
+  position: relative;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+/* Face (before) */
+.settingspray-animation > .face {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 200px;
+  border-radius: 50% 50% 45% 45%;
+  background: linear-gradient(180deg, rgba(230,210,200,0.28), rgba(245,235,225,0.3));
+  border: 2px solid rgba(232,67,147,0.18);
+}
+
+/* Misted 'after' coverage - vertical reveal */
+.settingspray-animation > .mistLayer {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 200px;
+  border-radius: 50% 50% 45% 45%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,250,245,0.2));
+  clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+  animation: mistVerticalCover 2.5s cubic-bezier(0.65,0,0.35,1) infinite;
+  box-shadow: inset 0 2px 18px rgba(255,255,255,0.4), 0 6px 25px rgba(174,214,241,0.15);
+}
+
+/* Spray Bottle - vertical press */
+.settingspray-animation > .bottle {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 90px;
+  background: linear-gradient(180deg, rgba(232,67,147,0.7), rgba(255,230,240,0.9));
+  border-radius: 12px;
+  animation: bottlePressVertical 2.5s cubic-bezier(0.65,0,0.35,1) infinite;
+  box-shadow: 0 8px 25px rgba(232,67,147,0.35);
+  z-index: 10;
+}
+
+.settingspray-animation > .droplet {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  animation: dropletSoft 2.5s ease-in-out infinite;
+}
+
+/* Highlighter Animation - Vertical Glow Reveal */
+.highlighter-animation {
+  width: 180px !important;
+  height: 280px !important;
+  position: relative;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+/* Face - Dull */
+.highlighter-animation > .face {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 220px;
+  border: 2px solid rgba(232, 67, 147, 0.25);
+  border-radius: 50% 50% 45% 45%;
+  background: linear-gradient(180deg, 
+    rgba(220, 200, 180, 0.3) 0%,
+    rgba(230, 210, 190, 0.35) 50%,
+    rgba(220, 200, 180, 0.3) 100%);
+  box-shadow: inset 0 3px 15px rgba(150, 130, 110, 0.15);
+}
+
+/* Glowing Highlighted Face - Vertical Reveal */
+.highlighter-animation > .glow {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 220px;
+  border-radius: 50% 50% 45% 45%;
+  background: 
+    radial-gradient(ellipse 40px 25px at 30% 40%, rgba(255, 215, 0, 0.7) 0%, transparent 60%),
+    radial-gradient(ellipse 40px 25px at 70% 40%, rgba(255, 215, 0, 0.7) 0%, transparent 60%),
+    radial-gradient(ellipse 15px 40px at 50% 50%, rgba(255, 235, 150, 0.6) 0%, transparent 60%),
+    radial-gradient(ellipse 50px 18px at 50% 25%, rgba(255, 245, 200, 0.65) 0%, transparent 60%),
+    linear-gradient(180deg, 
+      rgba(255, 240, 220, 0.4) 0%,
+      rgba(255, 250, 240, 0.45) 50%,
+      rgba(255, 245, 230, 0.4) 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+  animation: highlightVerticalReveal 2.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  box-shadow: 
+    0 5px 30px rgba(255, 215, 0, 0.5),
+    inset 0 2px 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Highlighter Brush - Vertical Swipe */
+.highlighter-animation > .brush {
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%) rotate(5deg);
+  width: 75px;
+  height: 16px;
+  background: linear-gradient(90deg, #8b4513 0%, #c49a6c 35%, #ffd700 100%);
+  border-radius: 35px 6px 6px 35px;
+  animation: highlightBrushVertical 2.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  box-shadow: 0 8px 30px rgba(255, 215, 0, 0.6);
+  z-index: 10;
+}
+
+.highlighter-animation > .brush::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -5px;
+  width: 25px;
+  height: 26px;
+  background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.6) 0%, rgba(255, 235, 150, 0.4) 40%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(3px);
+}
+
+.highlighter-animation > .sparkle {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3.5rem;
+  animation: sparkleRotate 2s linear infinite;
+  filter: drop-shadow(0 4px 15px rgba(255, 215, 0, 0.6));
+}
+
+/* Makeup Brushes Animation - Set Display */
+.brushes-animation {
+  width: 180px !important;
+  height: 280px !important;
+  position: relative;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+/* Face base for brushes */
+.brushes-animation > .face {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 220px;
+  border-radius: 50% 50% 45% 45%;
+  background: linear-gradient(180deg, rgba(245,235,230,0.25), rgba(250,245,240,0.3));
+  border: 2px solid rgba(232,67,147,0.12);
+}
+
+/* Brushes sweep vertically to apply product */
+.brushes-animation > .brush1,
+.brushes-animation > .brush2,
+.brushes-animation > .brush3,
+.brushes-animation > .brush4,
+.brushes-animation > .brush5 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 12px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #8b4513, #d4a574);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  animation: brushVerticalSwipe 2.5s cubic-bezier(0.65,0,0.35,1) infinite;
+}
+
+.brushes-animation > .brush1 { top: -80px; animation-delay: 0s; width: 22px; height: 18px; }
+.brushes-animation > .brush2 { top: -140px; animation-delay: 0.12s; width: 20px; height: 16px; }
+.brushes-animation > .brush3 { top: -200px; animation-delay: 0.24s; width: 18px; height: 14px; }
+.brushes-animation > .brush4 { top: -260px; animation-delay: 0.36s; width: 16px; height: 12px; }
+.brushes-animation > .brush5 { top: -320px; animation-delay: 0.48s; width: 14px; height: 10px; }
+
+.brushes-animation > .sparkles {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.2rem;
+  animation: sparkleFloat 2s ease-in-out infinite;
+}
+
+/* Bronzer Animation - Contouring */
+.bronzer-animation {
+  width: 180px !important;
+  height: 280px !important;
+  position: relative;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.bronzer-animation > .face {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 220px;
+  border-radius: 50% 50% 45% 45%;
+  background: linear-gradient(180deg, rgba(245,235,220,0.25), rgba(240,225,205,0.28));
+  border: 2px solid rgba(232,67,147,0.12);
+}
+
+/* Bronzer coverage revealed vertically */
+.bronzer-animation > .contours {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 220px;
+  border-radius: 50% 50% 45% 45%;
+  background: radial-gradient(ellipse at 30% 50%, rgba(139,90,65,0.45) 0%, transparent 55%), radial-gradient(ellipse at 70% 50%, rgba(139,90,65,0.35) 0%, transparent 55%);
+  clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+  animation: bronzerVerticalReveal 2.5s cubic-bezier(0.65,0,0.35,1) infinite;
+  box-shadow: inset 0 3px 18px rgba(255,230,210,0.25);
+}
+
+.bronzer-animation > .brush {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-6deg);
+  width: 90px;
+  height: 16px;
+  background: linear-gradient(90deg,#8b4513,#d4a574);
+  border-radius: 30px;
+  animation: bronzerBrushVertical 2.5s cubic-bezier(0.65,0,0.35,1) infinite;
+  box-shadow: 0 8px 30px rgba(205,133,63,0.35);
+  z-index: 10;
+}
+
+.bronzer-animation > .sun {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  font-size: 2.6rem;
+  animation: sunRotate 3s linear infinite;
+}
+
+/* Eyebrow Animation - Drawing Brows */
+.eyebrow-animation {
+  width: 180px !important;
+  height: 200px !important;
+  position: relative;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+/* Brows base */
+.eyebrow-animation > .brows-base {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 30px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, rgba(160,140,120,0.15), rgba(200,180,160,0.12));
+}
+
+/* Filled brows revealed vertically */
+.eyebrow-animation > .brows-fill {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 30px;
+  background: linear-gradient(90deg, #2c2c2c, #4a4a4a);
+  border-radius: 20px;
+  clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+  animation: browVerticalFill 2.2s cubic-bezier(0.65,0,0.35,1) infinite;
+}
+
+.eyebrow-animation > .pencil {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%) rotate(0deg);
+  width: 90px;
+  height: 8px;
+  background: linear-gradient(90deg, #e84393, #8b4513 60%, #2c2c2c);
+  border-radius: 4px;
+  animation: pencilVertical 2.2s cubic-bezier(0.65,0,0.35,1) infinite;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.eyebrow-animation > .sparkle {
+  position: absolute;
+  bottom: 18px;
+  right: 20px;
+  font-size: 2rem;
+  animation: sparklePopIn 2.2s ease-in-out infinite;
+}
+
+/* Primer Animation - Smoothing Base */
+.primer-animation {
+  width: 180px !important;
+  height: 280px !important;
+  position: relative;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.primer-animation > .face {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 220px;
+  border-radius: 50% 50% 45% 45%;
+  background: linear-gradient(180deg, rgba(245,230,220,0.25), rgba(240,225,210,0.28));
+  border: 2px solid rgba(232,67,147,0.12);
+}
+
+/* Smooth 'after' layer revealed vertically */
+.primer-animation > .smooth-layer {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 220px;
+  border-radius: 50% 50% 45% 45%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.4), rgba(255,250,245,0.35));
+  clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+  animation: primerVerticalSmooth 2.5s cubic-bezier(0.65,0,0.35,1) infinite;
+  box-shadow: inset 0 3px 18px rgba(255,255,255,0.45);
+}
+
+.primer-animation > .pores {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 150px;
+  background-image: radial-gradient(circle, rgba(0,0,0,0.08) 1px, transparent 1px);
+  background-size: 10px 10px;
+  opacity: 1;
+  animation: poresFade 2.5s ease-in-out infinite;
+}
+
+.primer-animation > .finger1,
+.primer-animation > .finger2 {
+  position: absolute;
+  width: 26px;
+  height: 36px;
+  background: radial-gradient(ellipse, rgba(255,192,203,0.6) 0%, rgba(255,192,203,0.3) 70%, transparent 100%);
+  border-radius: 50%;
+  opacity: 0;
+  animation: fingerVertical 2.5s cubic-bezier(0.65,0,0.35,1) infinite;
+}
+
+.primer-animation > .finger1 { top: -60px; left: 40px; animation-delay: 0.12s; }
+.primer-animation > .finger2 { top: -120px; right: 40px; animation-delay: 0.36s; }
+
+.primer-animation > .star {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  font-size: 2.4rem;
+  animation: starPulse 2.5s ease-in-out infinite;
+}
+
+/* Beauty Blender Animation - Bouncing Application */
+.blender-animation {
+  width: 180px !important;
+  height: 280px !important;
+  position: relative;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.blender-animation > .face {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 220px;
+  border-radius: 50% 50% 45% 45%;
+  background: linear-gradient(180deg, rgba(245,235,220,0.25), rgba(240,225,205,0.28));
+  border: 2px solid rgba(232,67,147,0.12);
+}
+
+/* Blend coverage revealed vertically */
+.blender-animation > .blend-texture {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 220px;
+  border-radius: 50% 50% 45% 45%;
+  background: linear-gradient(180deg, rgba(245,222,179,0.7), rgba(235,210,170,0.8));
+  clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+  animation: blenderVerticalCover 2.5s cubic-bezier(0.65,0,0.35,1) infinite;
+  overflow: hidden;
+}
+
+/* Beauty Blender Sponge - vertical press and glide */
+.blender-animation > .sponge {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 80px;
+  background: radial-gradient(ellipse at 40% 40%, #ff69b4 0%, #ff1493 100%);
+  border-radius: 50% 50% 50% 40%;
+  animation: spongeVerticalSwipe 2.5s cubic-bezier(0.65,0,0.35,1) infinite;
+  box-shadow: 0 10px 30px rgba(255,20,147,0.5);
+  z-index: 10;
+}
+
+.blender-animation > .sponge::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  width: 28px;
+  height: 28px;
+  background: rgba(255,255,255,0.45);
+  border-radius: 50%;
+  animation: spongeTexture 1.5s ease-in-out infinite;
+}
+
+.blender-animation > .droplet {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  font-size: 2.2rem;
+  animation: dropletSoft 2.5s ease-in-out infinite;
+}
+
+.blender-animation > .sparkle {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  animation: sparklePopIn 2.5s ease-in-out infinite;
+}
+
+/* ============================================
+   KEYFRAME ANIMATIONS
+   ============================================ */
+
+/* Foundation Animations - Vertical Swipe Down */
+@keyframes verticalSwipeDown {
+  0% { 
+    clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+  }
+  15% {
+    clip-path: polygon(0 0, 100% 0, 100% 25%, 0 25%);
+  }
+  30% {
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+  }
+  50% {
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 80%);
+  }
+  70% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  100% { 
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes handVerticalSwipe {
+  0% { 
+    top: -70px;
+    opacity: 0;
+    transform: translateX(-50%) rotate(0deg) scale(1);
+  }
+  8% {
+    opacity: 1;
+  }
+  15% { 
+    top: 20px;
+    transform: translateX(-50%) rotate(-3deg) scale(1.05);
+  }
+  30% { 
+    top: 80px;
+    transform: translateX(-50%) rotate(3deg) scale(0.98);
+  }
+  50% { 
+    top: 150px;
+    transform: translateX(-50%) rotate(-2deg) scale(1.02);
+  }
+  70% {
+    top: 220px;
+    transform: translateX(-50%) rotate(0deg) scale(1);
+  }
+  85% {
+    top: 280px;
+    opacity: 1;
+  }
+  100% { 
+    top: 320px;
+    opacity: 0;
+    transform: translateX(-50%) rotate(0deg) scale(0.95);
+  }
+}
+
+@keyframes sparklePopIn {
+  0%, 50% { 
+    opacity: 0; 
+    transform: translateX(-50%) scale(0) rotate(0deg); 
+  }
+  65% { 
+    opacity: 1; 
+    transform: translateX(-50%) scale(1.4) rotate(180deg); 
+  }
+  80% { 
+    transform: translateX(-50%) scale(0.9) rotate(360deg); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateX(-50%) scale(1) rotate(360deg); 
+  }
+}
+
+/* Concealer Animations - Vertical Coverage */
+@keyframes concealerVerticalCover {
+  0% { 
+    clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+  }
+  20% {
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  }
+  45% {
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0 70%);
+  }
+  75% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  100% { 
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes concealerWandVertical {
+  0% { 
+    top: -70px;
+    opacity: 0;
+    transform: translateX(-50%) scale(0.95);
+  }
+  12% {
+    opacity: 1;
+  }
+  30% { 
+    top: 50px;
+    transform: translateX(-50%) scale(1);
+  }
+  50% { 
+    top: 120px;
+    transform: translateX(-50%) scale(1);
+  }
+  75% {
+    top: 190px;
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+  92% {
+    top: 250px;
+    opacity: 0.2;
+  }
+  100% { 
+    top: 300px;
+    opacity: 0;
+    transform: translateX(-50%) scale(0.9);
+  }
+}
+
+/* Blush Animations - Vertical Reveal */
+@keyframes blushVerticalReveal {
+  0% { 
+    clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+  }
+  15% {
+    clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%);
+  }
+  35% {
+    clip-path: polygon(0 0, 100% 0, 100% 60%, 0 60%);
+  }
+  70% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  100% { 
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes blushBrushVertical {
+  0% { 
+    top: -65px;
+    opacity: 0;
+    transform: translateX(-50%) rotate(-8deg) scale(0.95);
+  }
+  10% {
+    opacity: 1;
+  }
+  25% { 
+    top: 35px;
+    transform: translateX(-50%) rotate(-5deg) scale(1);
+  }
+  45% { 
+    top: 105px;
+    transform: translateX(-50%) rotate(-2deg) scale(1);
+  }
+  70% {
+    top: 185px;
+    transform: translateX(-50%) rotate(2deg) scale(1);
+    opacity: 1;
+  }
+  90% {
+    top: 255px;
+    opacity: 0.3;
+  }
+  100% { 
+    top: 315px;
+    opacity: 0;
+    transform: translateX(-50%) rotate(5deg) scale(0.9);
+  }
+}
+
+@keyframes brushSwipe {
+  0% { 
+    left: -60px; 
+    transform: rotate(-25deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  30% { 
+    left: 30px; 
+    transform: rotate(-15deg);
+  }
+  60% { 
+    left: 90px; 
+    transform: rotate(0deg);
+  }
+  85% {
+    left: 140px;
+    transform: rotate(15deg);
+    opacity: 1;
+  }
+  100% { 
+    left: 180px; 
+    transform: rotate(25deg);
+    opacity: 0;
+  }
+}
+
+@keyframes heartBeat {
+  0%, 30% { 
+    transform: scale(0); 
+    opacity: 0;
+  }
+  50% { 
+    transform: scale(1.3); 
+    opacity: 1;
+  }
+  65% {
+    transform: scale(0.9);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% { 
+    transform: scale(1); 
+    opacity: 1;
+  }
+}
+
+/* Eyeshadow Animations - Vertical Sweep */
+@keyframes shadowVerticalSweep {
+  0% { 
+    clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+  }
+  18% {
+    clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%);
+  }
+  40% {
+    clip-path: polygon(0 0, 100% 0, 100% 65%, 0 65%);
+  }
+  72% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  100% { 
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes shadowBrushVertical {
+  0% { 
+    top: -65px;
+    opacity: 0;
+    transform: translateX(-50%) rotate(-10deg) scale(0.95);
+  }
+  12% {
+    opacity: 1;
+  }
+  28% { 
+    top: 25px;
+    transform: translateX(-50%) rotate(-6deg) scale(1);
+  }
+  48% { 
+    top: 75px;
+    transform: translateX(-50%) rotate(-2deg) scale(1);
+  }
+  75% {
+    top: 135px;
+    transform: translateX(-50%) rotate(2deg) scale(1);
+    opacity: 1;
+  }
+  92% {
+    top: 190px;
+    opacity: 0.3;
+  }
+  100% { 
+    top: 240px;
+    opacity: 0;
+    transform: translateX(-50%) rotate(5deg) scale(0.9);
+  }
+}
+
+@keyframes shadowBrushSwipe {
+  0% { 
+    left: -70px; 
+    top: 40px;
+    opacity: 0;
+    transform: rotate(-20deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  25% { 
+    left: 20px; 
+    top: 50px;
+    transform: rotate(-10deg);
+  }
+  50% { 
+    left: 70px; 
+    top: 60px;
+    transform: rotate(0deg);
+  }
+  75% { 
+    left: 120px; 
+    top: 55px;
+    transform: rotate(10deg);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% { 
+    left: 170px; 
+    top: 50px;
+    opacity: 0;
+    transform: rotate(20deg);
+  }
+}
+
+/* Mascara Animations */
+@keyframes lashFadeOut {
+  0%, 20% { 
+    opacity: 1;
+    height: 12px;
+    width: 2px;
+  }
+  40% {
+    opacity: 0.3;
+  }
+  50%, 100% { 
+    opacity: 0;
+  }
+}
+
+@keyframes lashGrowIn {
+  0%, 50% { 
+    height: 0; 
+    opacity: 0;
+    width: 3px;
+  }
+  65% { 
+    height: 25px; 
+    opacity: 1;
+  }
+  80% {
+    height: 32px;
+  }
+  100% { 
+    height: 35px; 
+    opacity: 1;
+  }
+}
+
+@keyframes mascaraVerticalSwipe {
+  0% { 
+    top: -80px;
+    opacity: 0;
+    transform: translateX(-50%) rotate(-5deg) scale(0.95);
+  }
+  10% {
+    opacity: 1;
+  }
+  25% { 
+    top: 20px;
+    transform: translateX(-50%) rotate(0deg) scale(1);
+  }
+  45% { 
+    top: 80px;
+    transform: translateX(-50%) rotate(2deg) scale(1);
+  }
+  70% {
+    top: 150px;
+    transform: translateX(-50%) rotate(3deg) scale(1);
+    opacity: 1;
+  }
+  90% {
+    top: 220px;
+    opacity: 0.4;
+  }
+  100% { 
+    top: 280px;
+    opacity: 0;
+    transform: translateX(-50%) rotate(5deg) scale(0.9);
+  }
+}
+
+@keyframes lashVerticalGrow {
+  0% { 
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+  15% {
+    clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0 100%);
+  }
+  35% {
+    clip-path: polygon(0 40%, 100% 40%, 100% 100%, 0 100%);
+  }
+  70% {
+    clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 100%);
+  }
+  100% { 
+    clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes eyeTransform {
+  0%, 40% { 
+    content: '👁️';
+    filter: grayscale(0.3);
+  }
+  60%, 100% { 
+    content: '👁️';
+    filter: grayscale(0) drop-shadow(0 3px 12px rgba(232, 67, 147, 0.4));
+    transform: translateX(-50%) scale(1.1);
+  }
+}
+
+/* Eyeliner Animations */
+@keyframes eyeOutline {
+  0% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+  100% { opacity: 0.3; }
+}
+
+@keyframes drawWingedLiner {
+  0% { 
+    width: 0; 
+    opacity: 0;
+    left: 10px;
+  }
+  15% { 
+    width: 80px; 
+    opacity: 1;
+    left: 10px;
+    height: 3px;
+  }
+  30% { 
+    width: 140px; 
+    left: 10px;
+    height: 3px;
+  }
+  45% { 
+    width: 160px; 
+    left: 10px;
+    height: 4px;
+  }
+  60% {
+    width: 160px;
+    height: 4px;
+  }
+  100% { 
+    width: 160px; 
+    opacity: 1;
+    height: 4px;
+  }
+}
+
+@keyframes penDraw {
+  0% { 
+    left: 0;
+    opacity: 1;
+  }
+  15% { 
+    left: 70px;
+  }
+  30% { 
+    left: 130px;
+  }
+  45% { 
+    left: 155px;
+  }
+  55% {
+    left: 155px;
+    opacity: 1;
+  }
+  65% {
+    left: 180px;
+    opacity: 0;
+  }
+  100% { 
+    left: 180px;
+    opacity: 0;
+  }
+}
+
+@keyframes wingFlick {
+  0% { 
+    opacity: 0;
+    border-left: 0px solid transparent;
+    transform: rotate(-25deg) scale(0);
+  }
+  50% { 
+    opacity: 0;
+  }
+  65% {
+    opacity: 1;
+    border-left: 20px solid transparent;
+    transform: rotate(-25deg) scale(0.5);
+  }
+  80% {
+    opacity: 1;
+    border-left: 40px solid transparent;
+    transform: rotate(-25deg) scale(1);
+  }
+  100% { 
+    opacity: 1;
+    border-left: 40px solid transparent;
+    transform: rotate(-25deg) scale(1);
+  }
+}
+
+@keyframes sparkleTrail {
+  0%, 100% { 
+    opacity: 0.5;
+    transform: translateY(-50%) scale(1);
+  }
+  50% { 
+    opacity: 1;
+    transform: translateY(-50%) scale(1.3);
+  }
+}
+
+@keyframes sparklesBurst {
+  0% { 
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  60% { 
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
+  85% {
+    opacity: 1;
+    transform: scale(1.3) rotate(360deg);
+  }
+  100% { 
+    opacity: 1;
+    transform: scale(1.2) rotate(360deg);
+  }
+}
+
+/* Lipstick Animations - Horizontal Swipe */
+@keyframes lipHorizontalSwipe {
+  0% { 
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+  }
+  15% {
+    clip-path: polygon(0% 0%, 30% 0%, 30% 100%, 0% 100%);
+  }
+  35% {
+    clip-path: polygon(0% 0%, 60% 0%, 60% 100%, 0% 100%);
+  }
+  70% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  100% { 
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+@keyframes lipstickHorizontalGlide {
+  0% { 
+    left: -50px;
+    opacity: 0;
+    transform: rotate(-15deg) scale(0.95);
+  }
+  5% {
+    opacity: 1;
+  }
+  20% { 
+    left: 10px; 
+    transform: rotate(-12deg) scale(1);
+  }
+  40% { 
+    left: 50px; 
+    transform: rotate(-8deg) scale(1);
+  }
+  65% {
+    left: 110px;
+    transform: rotate(-4deg) scale(1);
+  }
+  85% {
+    left: 160px;
+    opacity: 1;
+    transform: rotate(0deg) scale(0.98);
+  }
+  100% { 
+    left: 200px;
+    opacity: 0;
+    transform: rotate(2deg) scale(0.9);
+  }
+}
+
+@keyframes kissPopIn {
+  0%, 40% { 
+    opacity: 0; 
+    transform: translateX(-50%) translateY(20px) scale(0.5); 
+  }
+  60% { 
+    opacity: 1; 
+    transform: translateX(-50%) translateY(-5px) scale(1.2); 
+  }
+  75% {
+    transform: translateX(-50%) translateY(0) scale(0.95);
+  }
+  100% { 
+    transform: translateX(-50%) translateY(0) scale(1); 
+    opacity: 1;
+  }
+}
+
+/* Lip Gloss Animations */
+@keyframes glossShine {
+  0% { width: 0; opacity: 0; }
+  40% { width: 60px; opacity: 0.8; }
+  80% { width: 100px; opacity: 1; }
+  100% { width: 120px; opacity: 1; filter: blur(3px) brightness(1.3); }
+}
+
+@keyframes glossSwipe {
+  0% { left: 30px; }
+  50% { left: 110px; }
+  100% { left: 30px; }
+}
+
+/* Setting Spray Animations */
+@keyframes sprayMist {
+  0% { 
+    opacity: 0;
+    transform: translate(0, 0) scale(0.5);
+  }
+  50% { 
+    opacity: 0.8;
+    transform: translate(30px, 60px) scale(1.5);
+  }
+  100% { 
+    opacity: 0;
+    transform: translate(60px, 120px) scale(2);
+  }
+}
+
+@keyframes sprayBottle {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  25% { transform: translateX(10px) rotate(-5deg); }
+  75% { transform: translateX(-10px) rotate(5deg); }
+}
+
+@keyframes dropletFall {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(20px); opacity: 0.5; }
+}
+
+/* Highlighter Animations - Vertical Reveal */
+@keyframes highlightVerticalReveal {
+  0% { 
+    clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+  }
+  15% {
+    clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%);
+  }
+  35% {
+    clip-path: polygon(0 0, 100% 0, 100% 60%, 0 60%);
+  }
+  70% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  100% { 
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes highlightBrushVertical {
+  0% { 
+    top: -70px;
+    opacity: 0;
+    transform: translateX(-50%) rotate(5deg) scale(0.95);
+  }
+  10% {
+    opacity: 1;
+  }
+  25% { 
+    top: 40px;
+    transform: translateX(-50%) rotate(0deg) scale(1);
+  }
+  45% { 
+    top: 110px;
+    transform: translateX(-50%) rotate(-3deg) scale(1);
+  }
+  70% {
+    top: 190px;
+    transform: translateX(-50%) rotate(-5deg) scale(1);
+    opacity: 1;
+  }
+  90% {
+    top: 260px;
+    opacity: 0.3;
+  }
+  100% { 
+    top: 320px;
+    opacity: 0;
+    transform: translateX(-50%) rotate(-8deg) scale(0.9);
+  }
+}
+
+/* Brushes Animations */
+@keyframes brushFan1 {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(15deg); }
+}
+
+@keyframes brushFan2 {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-10deg); }
+}
+
+@keyframes brushFan3 {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(20deg); }
+}
+
+@keyframes brushFan4 {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-15deg); }
+}
+
+@keyframes brushFan5 {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(10deg); }
+}
+
+/* Bronzer Animations */
+@keyframes contourAppear {
+  0% { opacity: 0; filter: blur(10px); }
+  40% { opacity: 0.5; filter: blur(5px); }
+  100% { opacity: 0.7; filter: blur(2px); }
+}
+
+@keyframes sunRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Eyebrow Animations */
+@keyframes browDraw {
+  0% { width: 0; opacity: 0; }
+  50% { width: 60px; opacity: 1; }
+  100% { width: 70px; opacity: 1; }
+}
+
+@keyframes pencilDraw {
+  0% { left: 20px; }
+  50% { left: 90px; }
+  100% { left: 20px; }
+}
+
+/* Primer Animations */
+@keyframes primerSmooth {
+  0% { height: 0; opacity: 0; }
+  40% { height: 120px; opacity: 0.6; }
+  80% { height: 180px; opacity: 0.8; }
+  100% { height: 200px; opacity: 1; }
+}
+
+@keyframes poresFade {
+  0% { opacity: 0.5; }
+  100% { opacity: 0; }
+}
+
+@keyframes fingerTap {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 0.7; transform: scale(1.2); }
+}
+
+@keyframes starPulse {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.3) rotate(180deg); }
+}
+
+/* Beauty Blender Animations */
+@keyframes blendCoverage {
+  0% { height: 0; opacity: 0; }
+  40% { height: 120px; opacity: 0.7; }
+  80% { height: 180px; opacity: 0.9; }
+  100% { height: 200px; opacity: 1; }
+}
+
+@keyframes blenderBounce {
+  0% { top: 60px; left: 40px; transform: scale(1); }
+  15% { top: 80px; left: 50px; transform: scale(0.95); }
+  30% { top: 100px; left: 70px; transform: scale(1); }
+  45% { top: 120px; left: 90px; transform: scale(0.95); }
+  60% { top: 140px; left: 100px; transform: scale(1); }
+  75% { top: 100px; left: 80px; transform: scale(0.95); }
+  100% { top: 60px; left: 40px; transform: scale(1); }
+}
+
+@keyframes spongeTexture {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes dropletBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Common Animations */
+@keyframes sparkleFloat {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.7; }
+  50% { transform: translateY(-10px) scale(1.2); opacity: 1; }
+}
+
+@keyframes sparkleRotate {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* --- Added vertical-style keyframes for recently converted products --- */
+
+@keyframes glossVerticalFill {
+  0% { clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%); opacity: 0 }
+  30% { clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%); opacity: 0.6 }
+  60% { clip-path: polygon(0 0, 100% 0, 100% 70%, 0 70%); opacity: 1 }
+  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); opacity: 1 }
+}
+
+@keyframes glossApplicatorVertical {
+  0% { top: -60px; opacity: 0; transform: translateX(-50%) rotate(-6deg) }
+  20% { top: 10px; opacity: 1; transform: translateX(-50%) rotate(0deg) }
+  60% { top: 120px; opacity: 1; transform: translateX(-50%) rotate(2deg) }
+  100% { top: 160px; opacity: 0; transform: translateX(-50%) rotate(6deg) }
+}
+
+@keyframes mistVerticalCover {
+  0% { clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%); opacity: 0 }
+  30% { clip-path: polygon(0 0, 100% 0, 100% 15%, 0 15%); opacity: 0.5 }
+  60% { clip-path: polygon(0 0, 100% 0, 100% 80%, 0 80%); opacity: 0.95 }
+  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); opacity: 1 }
+}
+
+@keyframes bottlePressVertical {
+  0% { top: -80px; transform: translateX(-50%) scale(0.9); opacity: 0 }
+  20% { top: -20px; transform: translateX(-50%) scale(1); opacity: 1 }
+  60% { top: 0px; transform: translateX(-50%) scale(0.98); opacity: 1 }
+  100% { top: -100px; transform: translateX(-50%) scale(0.9); opacity: 0 }
+}
+
+@keyframes dropletSoft {
+  0% { transform: translateY(0) scale(0.9); opacity: 0 }
+  30% { transform: translateY(-6px) scale(1.05); opacity: 0.9 }
+  60% { transform: translateY(-12px) scale(1); opacity: 0.6 }
+  100% { transform: translateY(0) scale(0.95); opacity: 0 }
+}
+
+@keyframes brushVerticalSwipe {
+  0% { top: -320px; opacity: 0; transform: translateX(-50%) rotate(0deg) }
+  20% { top: -120px; opacity: 1; transform: translateX(-50%) rotate(-4deg) }
+  50% { top: 30px; opacity: 1; transform: translateX(-50%) rotate(0deg) }
+  100% { top: 260px; opacity: 0; transform: translateX(-50%) rotate(6deg) }
+}
+
+@keyframes bronzerVerticalReveal {
+  0% { clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%); opacity: 0 }
+  35% { clip-path: polygon(0 0, 100% 0, 100% 20%, 0 20%); opacity: 0.6 }
+  70% { clip-path: polygon(0 0, 100% 0, 100% 85%, 0 85%); opacity: 1 }
+  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); opacity: 1 }
+}
+
+@keyframes bronzerBrushVertical {
+  0% { top: -80px; opacity: 0; transform: translateX(-50%) rotate(-6deg) }
+  20% { top: 10px; opacity: 1; transform: translateX(-50%) rotate(-2deg) }
+  60% { top: 120px; opacity: 1; transform: translateX(-50%) rotate(2deg) }
+  100% { top: 220px; opacity: 0; transform: translateX(-50%) rotate(8deg) }
+}
+
+@keyframes browVerticalFill {
+  0% { clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%); opacity: 0 }
+  35% { clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%); opacity: 0.7 }
+  70% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); opacity: 1 }
+  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); opacity: 1 }
+}
+
+@keyframes pencilVertical {
+  0% { top: -60px; opacity: 0; transform: translateX(-50%) rotate(-10deg) }
+  25% { top: 10px; opacity: 1; transform: translateX(-50%) rotate(-2deg) }
+  60% { top: 90px; opacity: 1; transform: translateX(-50%) rotate(0deg) }
+  100% { top: 200px; opacity: 0; transform: translateX(-50%) rotate(6deg) }
+}
+
+@keyframes primerVerticalSmooth {
+  0% { clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%); opacity: 0 }
+  30% { clip-path: polygon(0 0, 100% 0, 100% 20%, 0 20%); opacity: 0.6 }
+  65% { clip-path: polygon(0 0, 100% 0, 100% 85%, 0 85%); opacity: 1 }
+  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); opacity: 1 }
+}
+
+@keyframes fingerVertical {
+  0% { top: -120px; opacity: 0; transform: translateX(0) rotate(0deg) }
+  20% { top: -30px; opacity: 1; transform: translateX(0) rotate(-4deg) }
+  50% { top: 80px; opacity: 1; transform: translateX(0) rotate(2deg) }
+  100% { top: 220px; opacity: 0; transform: translateX(0) rotate(8deg) }
+}
+
+@keyframes blenderVerticalCover {
+  0% { clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%); opacity: 0 }
+  30% { clip-path: polygon(0 0, 100% 0, 100% 25%, 0 25%); opacity: 0.7 }
+  65% { clip-path: polygon(0 0, 100% 0, 100% 85%, 0 85%); opacity: 1 }
+  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); opacity: 1 }
+}
+
+@keyframes spongeVerticalSwipe {
+  0% { top: -80px; opacity: 0; transform: translateX(-50%) scale(0.9) }
+  20% { top: 10px; opacity: 1; transform: translateX(-50%) scale(1) }
+  50% { top: 120px; opacity: 1; transform: translateX(-50%) scale(0.98) }
+  100% { top: 220px; opacity: 0; transform: translateX(-50%) scale(0.9) }
+}
+
+/* Handcrafted element styles for injected SVGs and smear layers */
+.sponge-hand-svg, .concealer-wand-svg, .mascara-wand-svg, .lip-hand-svg, .beauty-sponge-svg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 12;
+  opacity: 0;
+}
+
+.sponge-hand-svg { top: -40px; animation: handSpongeIn 2.5s cubic-bezier(0.2,0.9,0.2,1) infinite; }
+.concealer-wand-svg { top: -30px; animation: wandDip 2.2s cubic-bezier(0.25,0.9,0.3,1) infinite; left: 55%; }
+.mascara-wand-svg { top: -30px; animation: mascaraWandIn 2.3s cubic-bezier(0.25,0.9,0.3,1) infinite; left: 50%; }
+.lip-hand-svg { top: -10px; animation: lipHandMove 2.2s cubic-bezier(0.25,0.9,0.3,1) infinite; left: 52%; }
+.beauty-sponge-svg { top: -90px; animation: spongePress 2.5s cubic-bezier(0.25,0.9,0.3,1) infinite; }
+
+/* Smear layer for foundation to mimic real movement */
+.foundation-animation > .smear-layer {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 260px;
+  border-radius: 80px 80px 60px 60px;
+  background: linear-gradient(180deg, rgba(255,235,220,0.9), rgba(250,225,205,0.95));
+  clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+  filter: blur(0.6px) saturate(1.05);
+  box-shadow: inset 0 6px 24px rgba(255, 255, 255, 0.35);
+  animation: smearManual 2.6s cubic-bezier(0.25,0.9,0.3,1) infinite;
+  z-index: 6;
+}
+
+@keyframes smearManual {
+  0% { clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%); opacity: 0 }
+  18% { clip-path: polygon(0 0, 100% 0, 100% 12%, 0 12%); opacity: 0.6 }
+  45% { clip-path: polygon(0 0, 100% 0, 100% 58%, 0 58%); opacity: 1 }
+  70% { clip-path: polygon(0 0, 100% 0, 100% 92%, 0 92%); opacity: 1 }
+  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); opacity: 1 }
+}
+
+/* Concealer dots animation for staggered manual dabs */
+.concealer-animation > .coverage-dots { position: absolute; top: 132px; left: 50%; transform: translateX(-50%); width: 120px; height: 40px; z-index: 8; }
+.concealer-animation > .coverage-dots .dot { width: 18px; height: 18px; border-radius: 50%; background: rgba(255,235,220,0.96); opacity: 0; position: absolute; left: 10px; top: 10px; box-shadow: 0 3px 14px rgba(0,0,0,0.08) inset; }
+.concealer-animation > .coverage-dots .dot-1 { left: 12px; animation: dotTap 2.2s cubic-bezier(0.2,0.9,0.3,1) infinite; }
+.concealer-animation > .coverage-dots .dot-2 { left: 50px; animation: dotTap 2.2s cubic-bezier(0.2,0.9,0.3,1) infinite 0.12s; }
+.concealer-animation > .coverage-dots .dot-3 { left: 88px; animation: dotTap 2.2s cubic-bezier(0.2,0.9,0.3,1) infinite 0.24s; }
+
+@keyframes dotTap {
+  0% { transform: scale(0.2); opacity: 0 }
+  18% { transform: scale(1.05); opacity: 1 }
+  40% { transform: scale(0.95); opacity: 0.95 }
+  70% { transform: scale(1); opacity: 0.9 }
+  100% { transform: scale(1); opacity: 0 }
+}
+
+/* Mascara wand motion - small rotation + entry to mimic hand movement */
+@keyframes mascaraWandIn {
+  0% { top: -60px; opacity: 0; transform: translateX(-50%) rotate(-30deg) }
+  18% { top: -6px; opacity: 1; transform: translateX(-50%) rotate(-8deg) }
+  45% { top: 40px; transform: translateX(-50%) rotate(0deg) }
+  75% { top: 120px; transform: translateX(-50%) rotate(6deg) }
+  100% { top: 180px; opacity: 0; transform: translateX(-50%) rotate(12deg) }
+}
+
+/* Hand + sponge entry for foundation */
+@keyframes handSpongeIn {
+  0% { top: -40px; opacity: 0; transform: translateX(-50%) rotate(-6deg) }
+  10% { opacity: 1; }
+  30% { top: 10px; transform: translateX(-50%) rotate(-2deg) }
+  58% { top: 110px; transform: translateX(-50%) rotate(2deg) }
+  90% { top: 180px; opacity: 0.6 }
+  100% { top: 220px; opacity: 0 }
+}
+
+/* Lip hand motion for realistic bullet glide */
+@keyframes lipHandMove {
+  0% { top: -10px; opacity: 0; transform: translateX(-50%) rotate(-10deg) }
+  12% { opacity: 1; }
+  30% { top: 16px; transform: translateX(-50%) rotate(-6deg) }
+  60% { top: 56px; transform: translateX(-50%) rotate(-2deg) }
+  90% { top: 96px; opacity: 0 }
+}
+
+/* Sponge press for beauty blender */
+@keyframes spongePress {
+  0% { top: -90px; opacity: 0; transform: translateX(-50%) scale(0.9) }
+  12% { opacity: 1; }
+  28% { top: 10px; transform: translateX(-50%) scale(1.02) }
+  50% { top: 120px; transform: translateX(-50%) scale(0.98) }
+  80% { top: 200px; opacity: 0.6 }
+  100% { top: 260px; opacity: 0 }
+}
+
+/* ---------------------- Additional handcrafted SVG styles ---------------------- */
+.doe-foot-svg, .spray-bottle-svg, .hand-brush-svg, .bronzer-brush-svg, .micro-pencil-svg, .finger-press-svg, .hand-brush-svg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 12;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.doe-foot-svg { top: -28px; animation: doeIn 2.2s cubic-bezier(0.25,0.85,0.3,1) infinite; }
+.spray-bottle-svg { top: -90px; animation: sprayPress 2.6s cubic-bezier(0.25,0.85,0.3,1) infinite; }
+.hand-brush-svg { top: -40px; animation: handBrushSweep 2.4s cubic-bezier(0.25,0.85,0.3,1) infinite; }
+.bronzer-brush-svg { top: -30px; animation: bronzerBrushSweep 2.5s cubic-bezier(0.25,0.85,0.3,1) infinite; }
+.micro-pencil-svg { top: -22px; animation: pencilMicro 2.2s cubic-bezier(0.25,0.85,0.3,1) infinite; }
+.finger-press-svg { top: -50px; animation: fingerPressAnim 2.5s cubic-bezier(0.25,0.85,0.3,1) infinite; }
+
+@keyframes doeIn {
+  0% { top: -28px; opacity: 0; transform: translateX(-50%) rotate(-6deg); }
+  15% { top: 6px; opacity: 1; transform: translateX(-50%) rotate(-2deg); }
+  45% { top: 46px; transform: translateX(-50%) rotate(0deg); }
+  80% { top: 86px; opacity: 0.4; transform: translateX(-50%) rotate(4deg); }
+  100% { top: 120px; opacity: 0; }
+}
+
+@keyframes sprayPress {
+  0% { top: -90px; opacity: 0; transform: translateX(-50%) scale(0.9); }
+  20% { top: -20px; opacity: 1; transform: translateX(-50%) scale(1); }
+  45% { top: 8px; transform: translateX(-50%) scale(0.98); }
+  80% { top: 70px; opacity: 0.4; }
+  100% { top: 110px; opacity: 0; }
+}
+
+@keyframes handBrushSweep {
+  0% { top: -40px; opacity: 0; transform: translateX(-50%) rotate(-10deg); }
+  12% { opacity: 1; }
+  30% { top: 8px; transform: translateX(-50%) rotate(-4deg); }
+  60% { top: 110px; transform: translateX(-50%) rotate(2deg); }
+  100% { top: 220px; opacity: 0; }
+}
+
+@keyframes bronzerBrushSweep {
+  0% { top: -30px; opacity: 0; transform: translateX(-50%) rotate(-6deg); }
+  15% { top: 6px; opacity: 1; transform: translateX(-50%) rotate(-2deg); }
+  45% { top: 56px; transform: translateX(-50%) rotate(0deg); }
+  85% { top: 156px; opacity: 0.4; }
+  100% { top: 220px; opacity: 0; }
+}
+
+@keyframes pencilMicro {
+  0% { top: -22px; opacity: 0; transform: translateX(-50%) rotate(-12deg); }
+  10% { opacity: 1; }
+  30% { top: 6px; transform: translateX(-50%) rotate(-6deg); }
+  55% { top: 46px; transform: translateX(-50%) rotate(-2deg); }
+  100% { top: 120px; opacity: 0; }
+}
+
+@keyframes fingerPressAnim {
+  0% { top: -50px; opacity: 0; transform: translateX(-50%) scale(0.95); }
+  18% { top: 6px; opacity: 1; transform: translateX(-50%) scale(1.02); }
+  48% { top: 96px; transform: translateX(-50%) scale(0.98); }
+  100% { top: 200px; opacity: 0; }
+}
+
+
+

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highlighter - BeautySpot</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="loading-animations.css">
+    <link rel="stylesheet" href="floating-include.css">
+
+    <!-- Internal CSS: easy variables to change the nav colour -->
+    <style>
+        :root {
+            --nav-bg-start: rgba(197, 4, 245, 0.388);
+            --nav-bg-end: rgba(198, 0, 30, 0.656);
+            --nav-border: rgba(255, 20, 145, 0.66);
+            --nav-text: #f81010;
+            --nav-text-hover: #e90e7b;
+            --nav-accent: #ff4d88;
+        }
+
+        .glassmorphism-nav {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            padding: 10px 18px;
+            border-radius: 28px;
+            background: linear-gradient(135deg, var(--nav-bg-start), var(--nav-bg-end));
+            border: 1px solid var(--nav-border);
+            backdrop-filter: blur(8px) saturate(120%);
+            -webkit-backdrop-filter: blur(8px) saturate(120%);
+        }
+
+        .nav-inline {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            padding: 0;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+        }
+
+        .nav-inline .nav-item {
+            color: var(--nav-text);
+            text-decoration: none;
+            padding: 6px 8px;
+            border-radius: 6px;
+            transition: color .18s ease, background-color .18s ease;
+            font-weight: 600;
+            background: transparent;
+        }
+
+        .nav-inline .nav-item:hover,
+        .nav-inline .nav-item:focus {
+            color: var(--nav-text-hover);
+            background: rgba(255, 255, 255, 0.03);
+            transform: none;
+        }
+
+        /* Nav links for glassmorphism */
+        .glassmorphism-nav .nav-item {
+            color: var(--nav-text);
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: 18px;
+            transition: color .18s ease, background-color .18s ease, transform .12s ease;
+            font-weight: 600;
+        }
+
+        .glassmorphism-nav .nav-item:hover,
+        .glassmorphism-nav .nav-item:focus {
+            color: var(--nav-text-hover);
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateY(-2px);
+        }
+
+        * {
+            cursor: default;
+        }
+
+        .product-page {
+            min-height: 100vh;
+            padding: 10rem 9% 5rem;
+            background: linear-gradient(135deg,
+                    rgba(252, 228, 236, 0.9) 0%,
+                    rgba(255, 240, 246, 0.8) 25%,
+                    rgba(252, 228, 236, 0.9) 50%,
+                    rgba(255, 240, 246, 0.8) 75%,
+                    rgba(252, 228, 236, 0.9) 100%);
+        }
+
+        .product-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 2rem;
+            padding: 4rem 2rem;
+            box-shadow: 0 15px 40px rgba(232, 67, 147, 0.2);
+        }
+
+        .product-header h1 {
+            font-size: 5rem;
+            color: var(--accent, #e84393);
+            margin-bottom: 1rem;
+            text-shadow: 0 5px 20px rgba(232, 67, 147, 0.4);
+            font-family: var(--font-headings, 'Playfair Display');
+        }
+
+        .product-header p {
+            font-size: 2.2rem;
+            color: var(--text, #555);
+            font-family: var(--font-descriptions, 'Raleway');
+        }
+
+        .products-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-bottom: 5rem;
+        }
+
+        .showcase-card {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 2rem;
+            padding: 3rem;
+            transition: all 0.5s ease;
+            box-shadow: 0 10px 35px rgba(232, 67, 147, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .showcase-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg,
+                    rgba(255, 105, 180, 0.1) 0%,
+                    rgba(232, 67, 147, 0.1) 50%,
+                    rgba(255, 182, 193, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .showcase-card:hover::before {
+            opacity: 1;
+        }
+
+        .showcase-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 20px 60px rgba(232, 67, 147, 0.4);
+            border-color: rgba(255, 105, 180, 0.6);
+        }
+
+        .showcase-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .showcase-card h3 {
+            font-size: 2.4rem;
+            color: var(--accent, #e84393);
+            margin-bottom: 1.5rem;
+            font-family: var(--font-headings, 'Playfair Display');
+        }
+
+        .showcase-card p {
+            font-size: 1.6rem;
+            color: var(--text, #555);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-family: var(--font-body, 'Poppins');
+        }
+
+        .showcase-card .price {
+            font-size: 2.8rem;
+            color: var(--accent, #e84393);
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            font-family: var(--font-headings, 'Playfair Display');
+        }
+
+        .add-cart-btn {
+            width: 100%;
+            padding: 1.8rem;
+            background: rgba(232, 67, 147, 0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 1.2rem;
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 6px 20px rgba(232, 67, 147, 0.3);
+            font-family: var(--font-body, 'Poppins');
+        }
+
+        .add-cart-btn:hover {
+            background: rgba(232, 67, 147, 1);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(232, 67, 147, 0.5);
+        }
+
+        .back-home-btn {
+            display: inline-block;
+            padding: 2rem 4rem;
+            background: rgba(232, 67, 147, 0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 1.5rem;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(232, 67, 147, 0.3);
+            font-family: var(--font-body, 'Poppins');
+        }
+
+        .back-home-btn:hover {
+            background: rgba(232, 67, 147, 1);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(232, 67, 147, 0.5);
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header section starts  -->
+    <header class="header">
+        <!-- Mobile menu button -->
+        <div class="mobile-menu-btn" id="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <a href="index.html" class="logo">
+            <div class="beauty-icon">
+                <svg viewBox="0 0 120 120" class="beauty-svg">
+                    <defs>
+                        <linearGradient id="beautyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#ff4d88;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#ff69b4;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#b76e79;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="gemGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#fce4ec;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#ff4d88;stop-opacity:0.8" />
+                            <stop offset="100%" style="stop-color:#b76e79;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="45" y="70" width="30" height="35" rx="8" fill="url(#beautyGradient)" />
+                    <rect x="48" y="55" width="24" height="20" rx="12" fill="url(#gemGradient)" />
+                    <polygon points="60,25 70,35 60,45 50,35" fill="url(#gemGradient)" stroke="#ff4d88"
+                        stroke-width="2" />
+                </svg>
+            </div>
+            <span class="brand-title">BeautySpot</span>
+        </a>
+
+        <div class="nav-container">
+            <form action="" class="search-form">
+                <input type="search" name="" placeholder="search here..." id="search-box">
+                <label for="search-box" class="fas fa-search search-icon"></label>
+            </form>
+
+            <nav class="nav-inline" id="main-nav" aria-label="Main navigation">
+                <a href="index.html" class="nav-item" aria-label="Home">Home</a>
+                <a href="about.html" class="nav-item" aria-label="About">About</a>
+                <a href="products.html" class="nav-item active" aria-label="Shop">Shop</a>
+                <a href="gallery.html" class="nav-item" aria-label="Gallery">Gallery</a>
+                <a href="blogs.html" class="nav-item" aria-label="Blog">Tutorial</a>
+                <a href="reviews.html" class="nav-item" aria-label="Reviews">Reviews</a>
+                <a href="contact.html" class="nav-item" aria-label="Contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- product page starts -->
+    <div class="product-page">
+        <div class="product-header">
+            <h1>Highlighter Collection</h1>
+            <p>Add a perfect glow — powders, creams and liquids.</p>
+        </div>
+
+        <div class="products-showcase">
+            <div class="showcase-card">
+                <img src="https://m.media-amazon.com/images/I/61fyFY-L2zL._AC_UF1000,1000_QL80_.jpg"
+                    alt="Powder Highlighter">
+                <h3>Soft Glow Powder</h3>
+                <p>Velvety powder highlighter for buildable luminosity and long-lasting sheen.</p>
+                <div class="price">₹2,169 <span
+                        style="text-decoration: line-through; color: #999; font-size: 2rem;">₹2,919</span></div>
+                <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <div class="showcase-card">
+                <img src="https://images-static.nykaa.com/media/catalog/product/a/4/a4bed56KAYBE00000707_1.jpg"
+                    alt="Liquid Highlighter">
+                <h3>Liquid Luminizer</h3>
+                <p>Lightweight liquid highlighter for a wet-look glow that blends seamlessly.</p>
+                <div class="price">₹2,499 <span
+                        style="text-decoration: line-through; color: #999; font-size: 2rem;">₹3,329</span></div>
+                <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <div class="showcase-card">
+                <img src="https://images-cdn.ubuy.co.in/67dafa4988d62d2ee067eb45-sheglam-cream-highlighter-stick-long.jpg"
+                    alt="Cream Highlighter">
+                <h3>Cream Glow Stick</h3>
+                <p>Convenient cream stick for targeted highlighting and effortless application.</p>
+                <div class="price">₹2,339 <span
+                        style="text-decoration: line-through; color: #999; font-size: 2rem;">₹3,089</span></div>
+                <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+
+        <center>
+            <a href="products.html" class="back-home-btn">
+                <i class="fas fa-arrow-left"></i> Back to Products
+            </a>
+        </center>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Theme toggle functionality for product page
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+            }
+        }
+
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+            const next = current === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('beautyspot:theme', next); } catch (e) { /* ignore */ }
+        }
+
+        // Initialize theme from storage
+        (() => {
+            try {
+                const saved = localStorage.getItem('beautyspot:theme');
+                if (saved) { applyTheme(saved); }
+                else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    applyTheme('dark');
+                }
+            } catch (e) { /* ignore */ }
+            const themeToggle = document.getElementById('theme-toggle');
+            if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+        })();
+
+        function addToCart(btn) {
+            const card = btn.closest('.showcase-card');
+            const productName = card.querySelector('h3').textContent;
+            const price = card.querySelector('.price').textContent;
+
+            btn.textContent = '✓ Added to Cart!';
+            btn.style.background = 'rgba(46, 204, 113, 0.8)';
+
+            alert(productName + ' has been added to your cart!\nPrice: ' + price.split(' ')[0]);
+
+            setTimeout(() => {
+                btn.textContent = 'Add to Cart';
+                btn.style.background = 'rgba(232, 67, 147, 0.8)';
+            }, 2000);
+        }
+    </script>
+</body>
+
+</html>

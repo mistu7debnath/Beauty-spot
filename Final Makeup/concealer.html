@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concealer - BeautySpot</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="loading-animations.css">
+    <link rel="stylesheet" href="floating-include.css">
+
+    <!-- Internal CSS: Navigation styling -->
+    <style>
+        :root {
+            /* change these to update the nav colour / contrast */
+            --nav-bg-start: rgba(197, 4, 245, 0.388);
+            --nav-bg-end: rgba(198, 0, 30, 0.656);
+            --nav-border: rgba(255, 20, 145, 0.66);
+            --nav-text: #f81010;
+            --nav-text-hover: #e90e7b;
+            --nav-accent: #ff4d88;
+        }
+
+        /* Glass nav wrapper */
+        .glassmorphism-nav {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            padding: 10px 18px;
+            border-radius: 28px;
+            background: linear-gradient(135deg, var(--nav-bg-start), var(--nav-bg-end));
+            border: 1px solid var(--nav-border);
+            backdrop-filter: blur(8px) saturate(120%);
+            -webkit-backdrop-filter: blur(8px) saturate(120%);
+        }
+
+        /* Plain inline nav */
+        .nav-inline {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            padding: 0;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+        }
+
+        .nav-inline .nav-item {
+            color: var(--nav-text);
+            text-decoration: none;
+            padding: 6px 8px;
+            border-radius: 6px;
+            transition: color .18s ease, background-color .18s ease;
+            font-weight: 600;
+            background: transparent;
+        }
+
+        .nav-inline .nav-item:hover,
+        .nav-inline .nav-item:focus {
+            color: var(--nav-text-hover);
+            background: rgba(255, 255, 255, 0.03);
+            transform: none;
+        }
+
+        /* Nav links for glassmorphism */
+        .glassmorphism-nav .nav-item {
+            color: var(--nav-text);
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: 18px;
+            transition: color .18s ease, background-color .18s ease, transform .12s ease;
+            font-weight: 600;
+        }
+
+        .glassmorphism-nav .nav-item:hover,
+        .glassmorphism-nav .nav-item:focus {
+            color: var(--nav-text-hover);
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateY(-2px);
+        }
+
+        * {
+            cursor: default;
+        }
+
+        .product-page {
+            min-height: 100vh;
+            padding: 10rem 9% 5rem;
+            background: linear-gradient(135deg,
+                    rgba(252, 228, 236, 0.9) 0%,
+                    rgba(255, 240, 246, 0.8) 25%,
+                    rgba(252, 228, 236, 0.9) 50%,
+                    rgba(255, 240, 246, 0.8) 75%,
+                    rgba(252, 228, 236, 0.9) 100%);
+        }
+
+        .product-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 2rem;
+            padding: 4rem 2rem;
+            box-shadow: 0 15px 40px rgba(232, 67, 147, 0.2);
+        }
+
+        .product-header h1 {
+            font-size: 5rem;
+            color: var(--accent, #e84393);
+            margin-bottom: 1rem;
+            text-shadow: 0 5px 20px rgba(232, 67, 147, 0.4);
+            font-family: var(--font-headings, 'Playfair Display');
+        }
+
+        .product-header p {
+            font-size: 2.2rem;
+            color: var(--text, #555);
+            font-family: var(--font-descriptions, 'Raleway');
+        }
+
+        .products-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-bottom: 5rem;
+        }
+
+        .showcase-card {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 2rem;
+            padding: 3rem;
+            transition: all 0.5s ease;
+            box-shadow: 0 10px 35px rgba(232, 67, 147, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .showcase-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg,
+                    rgba(255, 105, 180, 0.1) 0%,
+                    rgba(232, 67, 147, 0.1) 50%,
+                    rgba(255, 182, 193, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .showcase-card:hover::before {
+            opacity: 1;
+        }
+
+        .showcase-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 20px 60px rgba(232, 67, 147, 0.4);
+            border-color: rgba(255, 105, 180, 0.6);
+        }
+
+        .showcase-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .showcase-card h3 {
+            font-size: 2.4rem;
+            color: var(--accent, #e84393);
+            margin-bottom: 1.5rem;
+            font-family: var(--font-headings, 'Playfair Display');
+        }
+
+        .showcase-card p {
+            font-size: 1.6rem;
+            color: var(--text, #555);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-family: var(--font-body, 'Poppins');
+        }
+
+        .showcase-card .price {
+            font-size: 2.8rem;
+            color: var(--accent, #e84393);
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            font-family: var(--font-headings, 'Playfair Display');
+        }
+
+        .add-cart-btn {
+            width: 100%;
+            padding: 1.8rem;
+            background: rgba(232, 67, 147, 0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 1.2rem;
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 6px 20px rgba(232, 67, 147, 0.3);
+            font-family: var(--font-body, 'Poppins');
+        }
+
+        .add-cart-btn:hover {
+            background: rgba(232, 67, 147, 1);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(232, 67, 147, 0.5);
+        }
+
+        .back-home-btn {
+            display: inline-block;
+            padding: 2rem 4rem;
+            background: rgba(232, 67, 147, 0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 1.5rem;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(232, 67, 147, 0.3);
+            font-family: var(--font-body, 'Poppins');
+        }
+
+        .back-home-btn:hover {
+            background: rgba(232, 67, 147, 1);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(232, 67, 147, 0.5);
+            color: #fff;
+        }
+    </style>
+
+    <!-- Internal CSS: easy variables to change the nav colour -->
+    <style>
+        :root {
+            --nav-bg-start: rgba(197, 4, 245, 0.388);
+            --nav-bg-end: rgba(198, 0, 30, 0.656);
+            --nav-border: rgba(255, 20, 145, 0.66);
+            --nav-text: #f81010;
+            --nav-text-hover: #e90e7b;
+            --nav-accent: #ff4d88;
+        }
+
+        .glassmorphism-nav {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            padding: 10px 18px;
+            border-radius: 28px;
+            background: linear-gradient(135deg, var(--nav-bg-start), var(--nav-bg-end));
+            border: 1px solid var(--nav-border);
+            backdrop-filter: blur(8px) saturate(120%);
+            -webkit-backdrop-filter: blur(8px) saturate(120%);
+        }
+
+        .nav-inline {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            padding: 0;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+        }
+
+        .nav-inline .nav-item {
+            color: var(--nav-text);
+            text-decoration: none;
+            padding: 6px 8px;
+            border-radius: 6px;
+            transition: color .18s ease, background-color .18s ease;
+            font-weight: 600;
+            background: transparent;
+        }
+
+        .nav-inline .nav-item:hover,
+        .nav-inline .nav-item:focus {
+            color: var(--nav-text-hover);
+            background: rgba(255, 255, 255, 0.03);
+            transform: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+    <header class="header">
+        <!-- Mobile menu button -->
+        <div class="mobile-menu-btn" id="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <a href="index.html" class="logo">
+            <div class="beauty-icon">
+                <svg viewBox="0 0 120 120" class="beauty-svg">
+                    <defs>
+                        <linearGradient id="beautyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#ff4d88;stop-opacity:1" />
+                            <stop offset="30%" style="stop-color:#b76e79;stop-opacity:1" />
+                            <stop offset="70%" style="stop-color:#ff69b4;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#fce4ec;stop-opacity:1" />
+                        </linearGradient>
+                        <radialGradient id="gemGradient" cx="50%" cy="30%" r="50%">
+                            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
+                            <stop offset="60%" style="stop-color:#ff4d88;stop-opacity:0.6" />
+                            <stop offset="100%" style="stop-color:#b76e79;stop-opacity:1" />
+                        </radialGradient>
+                    </defs>
+                    <rect x="45" y="70" width="30" height="35" rx="8" fill="url(#beautyGradient)" />
+                    <rect x="48" y="55" width="24" height="20" rx="12" fill="url(#gemGradient)" />
+                    <polygon points="60,25 70,35 60,45 50,35" fill="url(#gemGradient)" stroke="#ff4d88"
+                        stroke-width="2" />
+                    <circle cx="35" cy="30" r="3" fill="#fce4ec" opacity="0.8" />
+                    <circle cx="85" cy="40" r="2" fill="#ff4d88" opacity="0.9" />
+                    <circle cx="25" cy="60" r="2.5" fill="#b76e79" opacity="0.7" />
+                    <circle cx="95" cy="70" r="2" fill="#fce4ec" opacity="0.8" />
+                </svg>
+            </div>
+            <span class="brand-title">BeautySpot</span>
+        </a>
+
+        <div class="nav-container">
+            <form action="" class="search-form">
+                <input type="search" name="" placeholder="search here..." id="search-box">
+                <label for="search-box" class="fas fa-search search-icon"></label>
+            </form>
+
+            <nav class="nav-inline" id="main-nav" aria-label="Main navigation">
+                <a href="index.html" class="nav-item" aria-label="Home">Home</a>
+                <a href="about.html" class="nav-item" aria-label="About">About</a>
+                <a href="products.html" class="nav-item active" aria-label="Products">Products</a>
+                <a href="gallery.html" class="nav-item" aria-label="Gallery">Gallery</a>
+                <a href="arrivals.html" class="nav-item" aria-label="Arrivals">Arrivals</a>
+                <a href="blogs.html" class="nav-item" aria-label="Blogs">Tutorial</a>
+                <a href="reviews.html" class="nav-item" aria-label="Reviews">Reviews</a>
+                <a href="contact.html" class="nav-item" aria-label="Contact">Contact</a>
+                <div id="theme-toggle" class="theme-toggle nav-item" title="Toggle Dark/Light Mode">�</div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- product page starts -->
+    <div class="product-page">
+        <div class="product-header">
+            <h1>Concealer Collection</h1>
+            <p>Hide Imperfections with Precision</p>
+        </div>
+
+        <div class="products-showcase">
+            <div class="showcase-card">
+                <img src="https://media6.ppl-media.com//tr:h-235,w-235,c-at_max,dpr-2/static/img/product/371809/swiss-beauty-liquid-concealer-13-classic-nude-6gm_3_display_1756710867_17a5e78a.jpg"
+                    alt="Concealer">
+                <h3>Classic Concealer</h3>
+                <p>Full coverage concealer that hides blemishes, dark circles, and imperfections effortlessly with
+                    buildable formula.</p>
+                <div class="price">₹2,499 <span
+                        style="text-decoration: line-through; color: #999; font-size: 2rem;">₹3,299</span></div>
+                <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <div class="showcase-card">
+                <img src="https://m.media-amazon.com/images/I/51BDHF88TpL.jpg" alt="Concealer">
+                <h3>Pro Concealer</h3>
+                <p>Professional grade concealer with enhanced pigmentation and 16-hour wear for flawless coverage.</p>
+                <div class="price">₹3,299 <span
+                        style="text-decoration: line-through; color: #999; font-size: 2rem;">₹4,199</span></div>
+                <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <div class="showcase-card">
+                <img src="https://assets.myntassets.com/w_412,q_30,dpr_3,fl_progressive,f_webp/assets/images/21462234/2024/2/23/5f81cbe2-6c79-412f-938a-d473242438841708672896136-ACES-CANADA-High-Cover-Concealer-with-Shea-Butter--Vitamin-E-1.jpg"
+                    alt="Concealer">
+                <h3>Luxury Concealer</h3>
+                <p>Premium luxury concealer with skin-caring ingredients, anti-aging benefits and weightless finish.</p>
+                <div class="price">₹4,999 <span
+                        style="text-decoration: line-through; color: #999; font-size: 2rem;">₹6,699</span></div>
+                <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <div class="showcase-card">
+                <img src="https://moirabeauty.in/cdn/shop/files/CCC_105_1.jpg" alt="Concealer">
+                <h3>Color Correcting Concealer</h3>
+                <p>Multi-tone color correcting concealer that neutralizes discoloration and brightens under eyes.</p>
+                <div class="price">₹2,899 <span
+                        style="text-decoration: line-through; color: #999; font-size: 2rem;">₹3,749</span></div>
+                <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <div class="showcase-card">
+                <img src="https://smytten-image.gumlet.io/discover_product/1743170216_DRMMH05HP5_1.jpg" alt="Concealer">
+                <h3>Hydrating Concealer</h3>
+                <p>Moisturizing concealer with hyaluronic acid that hydrates while providing seamless coverage for dry
+                    skin.</p>
+                <div class="price">₹3,599 <span
+                        style="text-decoration: line-through; color: #999; font-size: 2rem;">₹4,399</span></div>
+                <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <div class="showcase-card">
+                <img src="https://m.media-amazon.com/images/I/517dpfDUc3L.jpg" alt="Concealer">
+                <h3>Waterproof Concealer</h3>
+                <p>Long-wearing waterproof concealer perfect for special events and all-day wear without smudging.</p>
+                <div class="price">₹3,199 <span
+                        style="text-decoration: line-through; color: #999; font-size: 2rem;">₹3,999</span></div>
+                <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+
+        <center>
+            <a href="index.html" class="back-home-btn">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </center>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Theme toggle functionality for product page
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+            }
+        }
+
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+            const next = current === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('beautyspot:theme', next); } catch (e) { /* ignore */ }
+        }
+
+        // Initialize theme from storage
+        (() => {
+            try {
+                const saved = localStorage.getItem('beautyspot:theme');
+                if (saved) { applyTheme(saved); }
+                else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    applyTheme('dark');
+                }
+            } catch (e) { /* ignore */ }
+            const themeToggle = document.getElementById('theme-toggle');
+            if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+        })();
+
+        function addToCart(btn) {
+            const card = btn.closest('.showcase-card');
+            const productName = card.querySelector('h3').textContent;
+            const price = card.querySelector('.price').textContent;
+
+            btn.textContent = '✓ Added to Cart!';
+            btn.style.background = 'rgba(46, 204, 113, 0.8)';
+
+            alert(productName + ' has been added to your cart!\nPrice: ' + price.split(' ')[0]);
+
+            setTimeout(() => {
+                btn.textContent = 'Add to Cart';
+                btn.style.background = 'rgba(232, 67, 147, 0.8)';
+            }, 2000);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "beautyspot-smoke-test",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "smoketest": "node smoke-test.js"
+  },
+  "devDependencies": {
+    "puppeteer": "^20.0.0"
+  }
+}

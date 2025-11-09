@@ -1,0 +1,890 @@
+/* Product-Specific Loading Animations */
+
+/* Foundation Animation - Applying on Face */
+.foundation-animation {
+  width: 200px !important;
+  height: 250px !important;
+  position: relative;
+  margin: 0 auto;
+}
+
+/* Face Outline */
+.foundation-animation > .face {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 200px;
+  background: linear-gradient(180deg, rgba(245, 222, 179, 0.1) 0%, rgba(245, 222, 179, 0.3) 100%);
+  border: 3px solid rgba(232, 67, 147, 0.3);
+  border-radius: 50% 50% 45% 45%;
+  animation: faceGlow 3s ease-in-out infinite;
+}
+
+/* Foundation Coverage Building Up */
+.foundation-animation > .coverage {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 0;
+  background: linear-gradient(180deg, rgba(245, 222, 179, 0.8) 0%, rgba(235, 210, 170, 0.9) 100%);
+  border-radius: 50% 50% 45% 45%;
+  animation: buildCoverage 3s ease-in-out infinite;
+  overflow: hidden;
+}
+
+/* Foundation Sponge Applicator */
+.foundation-animation > .sponge {
+  position: absolute;
+  top: 50px;
+  left: 30px;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle at 30% 30%, #ffb6c1 0%, #ff69b4 100%);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  animation: dabFoundation 3s ease-in-out infinite;
+  box-shadow: 0 5px 20px rgba(255, 182, 193, 0.6);
+  filter: blur(0.5px);
+}
+
+.foundation-animation > .sparkle {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 2rem;
+  animation: sparkleRotate 2s linear infinite;
+}
+
+/* Concealer Animation */
+.concealer-animation {
+  width: 100px !important;
+  height: 160px !important;
+  background: linear-gradient(180deg, #ffe4d6 0%, #ffc9a8 100%);
+  border-radius: 15px;
+  position: relative;
+  animation: twistSpin 2s ease-in-out infinite;
+  box-shadow: 0 10px 30px rgba(232, 67, 147, 0.3);
+  margin: 0 auto;
+}
+
+.concealer-animation::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 60px;
+  background: #e84393;
+  border-radius: 5px 5px 0 0;
+  animation: capPop 1.5s ease-in-out infinite;
+}
+
+.concealer-animation::after {
+  content: '✨';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  animation: sparkleRotate 2s linear infinite;
+}
+
+/* Blush Animation */
+.blush-animation {
+  width: 160px !important;
+  height: 160px !important;
+  background: radial-gradient(circle, #ffb3c7 0%, #ff8fab 50%, #e84393 100%);
+  border-radius: 50%;
+  position: relative;
+  animation: compactOpen 2s ease-in-out infinite;
+  box-shadow: 0 10px 40px rgba(232, 67, 147, 0.5);
+  margin: 0 auto;
+}
+
+.blush-animation::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+  background: radial-gradient(circle, rgba(255,255,255,0.5), transparent);
+  border-radius: 50%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.blush-animation::after {
+  content: '💖';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  animation: heartBeat 1s ease-in-out infinite;
+}
+
+/* Eyeshadow Animation */
+.eyeshadow-animation {
+  width: 180px !important;
+  height: 120px !important;
+  background: linear-gradient(90deg, #e84393 0%, #9b59b6 33%, #3498db 66%, #e8b89c 100%);
+  border-radius: 15px;
+  position: relative;
+  animation: paletteSlide 2s ease-in-out infinite;
+  box-shadow: 0 10px 40px rgba(232, 67, 147, 0.4);
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+/* Mascara Animation */
+.mascara-animation {
+  width: 30px !important;
+  height: 180px !important;
+  background: linear-gradient(180deg, #e84393 0%, #2c3e50 50%, #000 100%);
+  border-radius: 10px;
+  position: relative;
+  animation: mascaraWiggle 1.5s ease-in-out infinite;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+}
+
+.mascara-animation::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 50px;
+  background: #2c3e50;
+  border-radius: 5px;
+  animation: brushStroke 1s ease-in-out infinite;
+}
+
+.mascara-animation::after {
+  content: '👁️';
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  animation: eyeBlink 2s ease-in-out infinite;
+}
+
+/* Eyeliner Animation */
+.eyeliner-animation {
+  width: 180px !important;
+  height: 100px !important;
+  position: relative;
+  margin: 80px auto;
+  animation: eyeBlink 3s ease-in-out infinite;
+}
+
+/* Eye Shape */
+.eyeliner-animation::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 60px;
+  background: radial-gradient(circle at center, rgba(232, 67, 147, 0.1), transparent);
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: eyeOutline 3s ease-in-out infinite;
+}
+
+/* Eyeliner Wing Drawing */
+.eyeliner-animation::after {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #000 0%, #1a1a1a 50%, #000 100%);
+  border-radius: 2px 2px 0 0;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(232, 67, 147, 0.3);
+  animation: drawWingedLiner 3s ease-in-out infinite;
+  transform-origin: left center;
+}
+
+/* Eyeliner Pen */
+.eyeliner-animation > .pen {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100px;
+  height: 8px;
+  background: linear-gradient(90deg, #e84393 0%, #c0392b 70%, #2c3e50 100%);
+  border-radius: 4px;
+  box-shadow: 0 3px 10px rgba(232, 67, 147, 0.4);
+  animation: penDraw 3s ease-in-out infinite;
+  z-index: 2;
+}
+
+.eyeliner-animation > .pen::before {
+  content: '';
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid #2c3e50;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+.eyeliner-animation > .pen::after {
+  content: '✨';
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  animation: sparkleTrail 1s ease-in-out infinite;
+}
+
+/* Wing Flick */
+.eyeliner-animation > .wing {
+  position: absolute;
+  top: 28px;
+  right: 15px;
+  width: 0;
+  height: 0;
+  border-left: 0px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 25px solid #000;
+  transform: rotate(-25deg);
+  opacity: 0;
+  animation: wingFlick 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(232, 67, 147, 0.5));
+}
+
+/* Sparkle Effects */
+.eyeliner-animation > .sparkles {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  animation: sparklesBurst 3s ease-in-out infinite;
+}
+
+/* Lipstick Animation */
+.lipstick-animation {
+  width: 60px !important;
+  height: 150px !important;
+  background: linear-gradient(180deg, #e84393 0%, #c0392b 100%);
+  border-radius: 10px;
+  position: relative;
+  animation: lipstickTwist 2s ease-in-out infinite;
+  box-shadow: 0 10px 30px rgba(232, 67, 147, 0.5);
+  margin: 0 auto;
+}
+
+.lipstick-animation::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 80px;
+  background: linear-gradient(180deg, #ff1744 0%, #c0392b 100%);
+  border-radius: 20px 20px 5px 5px;
+  clip-path: polygon(30% 0%, 70% 0%, 100% 100%, 0% 100%);
+  animation: lipstickRise 2s ease-in-out infinite;
+}
+
+.lipstick-animation::after {
+  content: '💋';
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  animation: kissFloat 1.5s ease-in-out infinite;
+}
+
+/* Lip Gloss Animation */
+.lipgloss-animation {
+  width: 50px !important;
+  height: 140px !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.3), rgba(232,67,147,0.6));
+  border-radius: 15px;
+  position: relative;
+  animation: glossShine 2s ease-in-out infinite;
+  box-shadow: 0 10px 30px rgba(232, 67, 147, 0.4);
+  backdrop-filter: blur(5px);
+  margin: 0 auto;
+}
+
+.lipgloss-animation::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  right: 5px;
+  height: 60%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(232,67,147,0.3));
+  border-radius: 10px;
+  animation: liquidBubble 1.5s ease-in-out infinite;
+}
+
+.lipgloss-animation::after {
+  content: '✨';
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  animation: glitterSpin 2s linear infinite;
+}
+
+/* Setting Spray Animation */
+.settingspray-animation {
+  width: 100px !important;
+  height: 160px !important;
+  background: linear-gradient(180deg, #e84393 0%, rgba(255,255,255,0.3) 100%);
+  border-radius: 20px;
+  position: relative;
+  animation: sprayBottle 1.5s ease-in-out infinite;
+  box-shadow: 0 10px 30px rgba(232, 67, 147, 0.3);
+  margin: 0 auto;
+}
+
+.settingspray-animation::before {
+  content: '';
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 30px;
+  background: #e84393;
+  border-radius: 10px 10px 0 0;
+}
+
+.settingspray-animation::after {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 80px;
+  background: radial-gradient(circle, rgba(232,67,147,0.2) 0%, transparent 70%);
+  animation: sprayMist 1s ease-out infinite;
+}
+
+/* Highlighter Animation */
+.highlighter-animation {
+  width: 140px !important;
+  height: 140px !important;
+  background: radial-gradient(circle, #ffd700 0%, #ffed4e 40%, #e84393 100%);
+  border-radius: 50%;
+  position: relative;
+  animation: glowPulse 1.5s ease-in-out infinite;
+  box-shadow: 0 0 50px rgba(255, 215, 0, 0.8);
+  margin: 0 auto;
+}
+
+.highlighter-animation::before {
+  content: '✨';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  animation: starTwinkle 1s ease-in-out infinite;
+}
+
+.highlighter-animation::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 50%;
+  background: radial-gradient(circle, transparent 60%, rgba(255,255,255,0.6) 100%);
+  animation: shimmerRing 2s linear infinite;
+}
+
+/* Brushes Animation */
+.brushes-animation {
+  width: 180px !important;
+  height: 180px !important;
+  position: relative;
+  animation: brushRotate 3s linear infinite;
+  margin: 0 auto;
+}
+
+.brushes-animation::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 20px;
+  height: 140px;
+  background: linear-gradient(180deg, #8b4513 0%, #e84393 100%);
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(232, 67, 147, 0.3);
+}
+
+.brushes-animation::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 20px;
+  height: 140px;
+  background: linear-gradient(180deg, #8b4513 0%, #ff69b4 100%);
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(255, 105, 180, 0.3);
+}
+
+/* Bronzer Animation */
+.bronzer-animation {
+  width: 160px !important;
+  height: 160px !important;
+  background: radial-gradient(circle, #d4a373 0%, #a0826d 50%, #8b6f47 100%);
+  border-radius: 50%;
+  position: relative;
+  animation: bronzerSpin 2s ease-in-out infinite;
+  box-shadow: 0 10px 40px rgba(139, 111, 71, 0.5);
+  margin: 0 auto;
+}
+
+.bronzer-animation::before {
+  content: '☀️';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  animation: sunRotate 3s linear infinite;
+}
+
+/* Eyebrow Animation */
+.eyebrow-animation {
+  width: 180px !important;
+  height: 40px !important;
+  position: relative;
+  animation: browMove 2s ease-in-out infinite;
+  margin: 80px auto;
+}
+
+.eyebrow-animation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #3e2723;
+  border-radius: 50% 50% 30% 30% / 100% 100% 40% 40%;
+  clip-path: ellipse(90px 20px at 50% 50%);
+}
+
+.eyebrow-animation::after {
+  content: '✏️';
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  animation: pencilDraw 1.5s ease-in-out infinite;
+}
+
+/* Primer Animation */
+.primer-animation {
+  width: 90px !important;
+  height: 170px !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(232,67,147,0.3) 100%);
+  border-radius: 15px;
+  position: relative;
+  animation: primerShake 1.5s ease-in-out infinite;
+  box-shadow: 0 10px 30px rgba(232, 67, 147, 0.3);
+  margin: 0 auto;
+}
+
+.primer-animation::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  right: 10px;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), transparent);
+  border-radius: 10px;
+  animation: primerFlow 2s ease-in-out infinite;
+}
+
+.primer-animation::after {
+  content: '⭐';
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  animation: starFloat 1.5s ease-in-out infinite;
+}
+
+/* Beauty Blender Animation */
+.blender-animation {
+  width: 100px !important;
+  height: 140px !important;
+  background: radial-gradient(ellipse, #ff69b4 0%, #e84393 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: relative;
+  animation: spongeJump 1s ease-in-out infinite;
+  box-shadow: 0 10px 30px rgba(232, 67, 147, 0.5);
+  margin: 0 auto;
+}
+
+.blender-animation::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  right: 20%;
+  bottom: 20%;
+  background: radial-gradient(circle, rgba(255,255,255,0.6), transparent);
+  border-radius: 50%;
+  animation: spongeTexture 1.5s ease-in-out infinite;
+}
+
+.blender-animation::after {
+  content: '💧';
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  animation: dropFall 1.5s ease-in-out infinite;
+}
+
+/* Animation Keyframes */
+@keyframes bottleShake {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+@keyframes liquidWave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes twistSpin {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(180deg); }
+}
+
+@keyframes capPop {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+@keyframes sparkleRotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes compactOpen {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.9); }
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes heartBeat {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.2); }
+}
+
+@keyframes paletteSlide {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+
+@keyframes mascaraWiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+
+@keyframes brushStroke {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-5px); }
+}
+
+@keyframes eyeBlink {
+  0%, 90%, 100% { opacity: 1; }
+  95% { opacity: 0; }
+}
+
+@keyframes eyeBlink {
+  0%, 100% { transform: scaleY(1); }
+  10%, 90% { transform: scaleY(0.95); }
+  20%, 80% { transform: scaleY(1); }
+}
+
+@keyframes eyeOutline {
+  0% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+  100% { opacity: 0.3; }
+}
+
+@keyframes drawWingedLiner {
+  0% { 
+    width: 0; 
+    opacity: 0;
+    left: 10px;
+  }
+  15% { 
+    width: 80px; 
+    opacity: 1;
+    left: 10px;
+    height: 3px;
+  }
+  30% { 
+    width: 140px; 
+    left: 10px;
+    height: 3px;
+  }
+  45% { 
+    width: 160px; 
+    left: 10px;
+    height: 4px;
+  }
+  60% {
+    width: 160px;
+    height: 4px;
+  }
+  100% { 
+    width: 160px; 
+    opacity: 1;
+    height: 4px;
+  }
+}
+
+@keyframes penDraw {
+  0% { 
+    left: 0;
+    opacity: 1;
+  }
+  15% { 
+    left: 70px;
+  }
+  30% { 
+    left: 130px;
+  }
+  45% { 
+    left: 155px;
+  }
+  55% {
+    left: 155px;
+    opacity: 1;
+  }
+  65% {
+    left: 180px;
+    opacity: 0;
+  }
+  100% { 
+    left: 180px;
+    opacity: 0;
+  }
+}
+
+@keyframes wingFlick {
+  0% { 
+    opacity: 0;
+    border-left: 0px solid transparent;
+    transform: rotate(-25deg) scale(0);
+  }
+  50% { 
+    opacity: 0;
+  }
+  65% {
+    opacity: 1;
+    border-left: 20px solid transparent;
+    transform: rotate(-25deg) scale(0.5);
+  }
+  80% {
+    opacity: 1;
+    border-left: 40px solid transparent;
+    transform: rotate(-25deg) scale(1);
+  }
+  100% { 
+    opacity: 1;
+    border-left: 40px solid transparent;
+    transform: rotate(-25deg) scale(1);
+  }
+}
+
+@keyframes sparkleTrail {
+  0%, 100% { 
+    opacity: 0.5;
+    transform: translateY(-50%) scale(1);
+  }
+  50% { 
+    opacity: 1;
+    transform: translateY(-50%) scale(1.3);
+  }
+}
+
+@keyframes sparklesBurst {
+  0% { 
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  60% { 
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
+  85% {
+    opacity: 1;
+    transform: scale(1.3) rotate(360deg);
+  }
+  100% { 
+    opacity: 1;
+    transform: scale(1.2) rotate(360deg);
+  }
+}
+
+@keyframes penMove {
+  0%, 100% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(-50%) translateX(10px); }
+}
+
+@keyframes lipstickTwist {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(15deg); }
+}
+
+@keyframes lipstickRise {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+@keyframes kissFloat {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+@keyframes glossShine {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.3); }
+}
+
+@keyframes liquidBubble {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes glitterSpin {
+  0% { transform: translateX(-50%) rotate(0deg) scale(1); }
+  50% { transform: translateX(-50%) rotate(180deg) scale(1.2); }
+  100% { transform: translateX(-50%) rotate(360deg) scale(1); }
+}
+
+@keyframes sprayBottle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+}
+
+@keyframes sprayMist {
+  0% { opacity: 0.8; transform: translateX(-50%) scale(0.5); }
+  100% { opacity: 0; transform: translateX(-50%) scale(1.5); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 50px rgba(255, 215, 0, 0.8); }
+  50% { transform: scale(1.1); box-shadow: 0 0 80px rgba(255, 215, 0, 1); }
+}
+
+@keyframes starTwinkle {
+  0%, 100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.8); }
+}
+
+@keyframes shimmerRing {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes brushRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes bronzerSpin {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(180deg); }
+}
+
+@keyframes sunRotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes browMove {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes pencilDraw {
+  0%, 100% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(-50%) translateX(5px); }
+}
+
+@keyframes primerShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
+}
+
+@keyframes primerFlow {
+  0%, 100% { opacity: 0.6; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-10px); }
+}
+
+@keyframes starFloat {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+@keyframes spongeJump {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(0.95, 1.05); }
+}
+
+@keyframes spongeTexture {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes dropFall {
+  0% { transform: translateX(-50%) translateY(-20px); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(-50%) translateY(0); opacity: 0; }
+}

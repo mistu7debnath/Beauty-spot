@@ -1,0 +1,32 @@
+/* Floating animation utilities
+   Usage:
+   - Add `float` to any element to apply a subtle vertical float animation
+   - Optionally add `float-slow`, `float-medium`, or `float-fast` to adjust speed
+   - Add `float-large` to increase amplitude
+*/
+
+@keyframes float-vert {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-2px); }
+  100% { transform: translateY(0px); }
+}
+
+.float {
+  animation-name: float-vert;
+  animation-duration: 8s; /* much longer for very gentle motion */
+  animation-timing-function: cubic-bezier(0.25,0.46,0.45,0.94);
+  animation-iteration-count: infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.float-slow { animation-duration: 10s; }
+.float-medium { animation-duration: 8s; }
+.float-fast { animation-duration: 6s; }
+
+.float-large { transform-origin: center; }
+
+/* reduced motion fallback */
+@media (prefers-reduced-motion: reduce) {
+  .float, .float-slow, .float-medium, .float-fast { animation: none !important; transform: none !important; }
+}
