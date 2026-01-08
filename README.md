@@ -3,7 +3,7 @@
 
 💄 BeautySpot
 
-BeautySpot is a modern, elegant, and responsive beauty & makeup e-commerce website designed to showcase cosmetic products, makeup tutorials, and customer reviews with a stylish pink-themed UI.
+BeautySpot is a modern, elegant, and responsive beauty & makeup e-commerce website designed to showcase cosmetic products, makeup tutorials, and customer reviews with a stylish UI.
 
 .
 
