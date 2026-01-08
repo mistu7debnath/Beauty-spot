@@ -29,13 +29,13 @@ blogs.html – Tutorials with embedded videos
 reviews.html – Customer testimonials
 
 
-🎨 Design
+🎨 Design:
 
 Theme: Pink gradient (#C504F5 → #C6001E)
 Currency: Indian Rupees (₹)
 Fonts: Clean sans-serif, bold gradient headings
 
-🛠️ Tech Stack
+🛠️ Tech Stack:
 HTML5, CSS3, JavaScript
 Font Awesome for icons
 YouTube Embed API for tutorials
@@ -49,6 +49,6 @@ Playwright for testing
 💳 Payment gateway integration
 📊 Admin dashboard
 
-👩‍💻 Author
+👩‍💻 Author:
 Manisha Debnath
 📌 Frontend Developer | Web Designer
