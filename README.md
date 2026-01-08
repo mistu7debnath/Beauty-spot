@@ -7,18 +7,12 @@ A modern and elegant beauty & makeup e-commerce website featuring products, tuto
 
 .
 
-🌟 Features
-
+🌟 Features:
 📱 Fully Responsive Design (Mobile, Tablet & Desktop)
-
 🛍️ Product Catalog
-
 Foundation
-
 Concealer
-
 Highlighter
-
 Lipstick
 
 🖼️ Interactive Image Gallery with hover & zoom effects
