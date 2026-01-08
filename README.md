@@ -53,12 +53,8 @@ Playwright for testing
 
 ✨
 
-📌 Future Enhancements
-
+📌 Future Enhancements:
 🛒 Add cart & checkout functionality
-
 🔐 User authentication
-
 💳 Payment gateway integration
-
 📊 Admin dashboard
