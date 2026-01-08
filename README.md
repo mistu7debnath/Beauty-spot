@@ -48,3 +48,7 @@ Playwright for testing
 🔐 User authentication
 💳 Payment gateway integration
 📊 Admin dashboard
+
+👩‍💻 Author
+Manisha Debnath
+📌 Frontend Developer | Web Designer
