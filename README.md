@@ -16,13 +16,9 @@ Highlighter
 Lipstick
 
 🖼️ Interactive Image Gallery with hover & zoom effects
-
 🎥 Makeup Tutorials using embedded YouTube Shorts
-
 ⭐ Customer Reviews & Testimonials
-
 📩 Contact Form for user inquiries
-
 ✨ Smooth Animations with a pink gradient theme
 🖼️ Pages
 
