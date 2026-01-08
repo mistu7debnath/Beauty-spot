@@ -5,16 +5,31 @@
 
 A modern and elegant beauty & makeup e-commerce website featuring products, tutorials, and customer reviews.
 
+.
+
 🌟 Features
 
-Responsive design for all devices
-Product catalog: foundation, concealer, highlighter, lipstick
-Interactive image gallery with zoom effects
-YouTube Shorts makeup tutorials
-Customer reviews & contact form
-Smooth pink-themed animations
-animations
+📱 Fully Responsive Design (Mobile, Tablet & Desktop)
 
+🛍️ Product Catalog
+
+Foundation
+
+Concealer
+
+Highlighter
+
+Lipstick
+
+🖼️ Interactive Image Gallery with hover & zoom effects
+
+🎥 Makeup Tutorials using embedded YouTube Shorts
+
+⭐ Customer Reviews & Testimonials
+
+📩 Contact Form for user inquiries
+
+✨ Smooth Animations with a pink gradient theme
 🖼️ Pages
 
 index.html – Homepage with featured products
