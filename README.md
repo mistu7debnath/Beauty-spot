@@ -41,7 +41,7 @@ Font Awesome for icons
 YouTube Embed API for tutorials
 Playwright for testing
 
-✨
+
 
 📌 Future Enhancements:
 🛒 Add cart & checkout functionality
