@@ -22,7 +22,7 @@ Lipstick
 ✨ Smooth Animations with a pink gradient theme
 🖼️ Pages
 
-index.html – Homepage with featured products
+index.html – Homepage with featured for products
 products.html – Product listings
 gallery.html – Image gallery
 blogs.html – Tutorials with embedded videos
