@@ -32,7 +32,7 @@ reviews.html – Customer testimonials
 🎨 Design:
 
 Theme: Pink gradient (#C504F5 → #C6001E)
-Currency: Indian Rupees (₹)
+Currency: In Indian Rupees (₹)
 Fonts: Clean sans-serif, bold gradient headings
 
 🛠️ Tech Stack:
