@@ -23,7 +23,7 @@ Lipstick
 🖼️ Pages
 
 index.html – Homepage with featured for products
-products.html – Product listings
+products.html – Product listings view
 gallery.html – Image gallery
 blogs.html – Tutorials with embedded videos
 reviews.html – Customer testimonials
